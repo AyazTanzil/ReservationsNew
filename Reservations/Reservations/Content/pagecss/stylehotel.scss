@@ -1,0 +1,1813 @@
+﻿/*____________________________________________________________________
+    ________________ Orignal stylehotel.scss have been crashed ________
+    __________________________________________________________________
+*/
+
+@import "ov_header.scss";
+
+
+/*------------ 2 --------------------
+-------------------->->->->->------------- */
+.search-card {
+    border-radius: 4px;
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    border-bottom: solid 1px #e7e7e7;
+    min-height: 40px;
+    /* firefox 19+ */
+    /* ie */
+}
+
+.search-card .frst-col {
+    background-color: #fafafa;
+    color: $egrfontblue;
+    padding: 6px 10px;
+    text-align: center;
+    border-right: 1px solid #F4f4f4;
+}
+
+.search-card .frst-col .fa {
+    display: block;
+}
+
+.search-card > div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.search-card .form-control {
+    height: 35px;
+    padding: 0px;
+    padding-left: 25px;
+    font-size: 13px;
+    color: $egrfontblue;
+    border-color: #efefef;
+}
+
+.search-card .form-group, .search-card .input-group {
+    margin: 0px;
+}
+
+.search-card .form-control + .fa {
+    position: absolute;
+    left: 22px;
+    top: 30px;
+    font-size: 13px;
+    color: $dark_blue_rgba;
+}
+
+.search-card .egr-calendar-icon .fa {
+    left: 8px;
+    top: 11px;
+}
+
+.search-card .egr-calendar-icon .first-div {
+    padding-right: 2px;
+}
+
+.search-card ::-webkit-input-placeholder {
+    color: #777;
+    font-size: 13px;
+}
+
+.search-card ::-moz-placeholder {
+    color: #777;
+}
+
+.search-card :-ms-input-placeholder {
+    color: #777;
+}
+
+.search-card input:-moz-placeholder {
+    color: #777;
+}
+
+.search-card .seperator-vr {
+    position: absolute;
+    display: block;
+    width: 1px;
+    top: 12px;
+    right: 7px;
+    background-color: #E5EAF2;
+    height: 50px;
+}
+
+.search-card .vr-2 {
+    right: -8px;
+}
+
+.search-card .vr-3 {
+    right: -8px;
+    top: -5px;
+}
+
+.search-card .input-group-addon {
+    font-size: 0px;
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 0px;
+    margin-left: -2px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    cursor: pointer;
+}
+
+.search-card .input-group-addon i {
+    color: $dark_blue_rgba !important;
+    font-size: 9px;
+}
+
+.search-card .input-group-addon:active, .search-card .input-group-addon:hover, .search-card .input-group-addon:focus {
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.search-card .col-padding-right {
+    padding-right: 2px;
+}
+
+.search-card .input-group .form-control {
+    padding-left: 7px;
+    border-right: none;
+}
+
+.search-card .btn .fa {
+    padding-right: 5px;
+}
+
+.map-panel {
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.map-panel .card {
+    border-radius: 4px;
+}
+
+.map-panel .card-header {
+    border-radius: 0px;
+    padding: 15px;
+    background: #828dac;
+    border-color: #828dac;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.map-panel .card-header h4 {
+    font-size: 1.2em;
+    color: #FFF;
+    margin: 0px;
+    line-height: 1.6;
+}
+
+.map-panel .card-header h4 i {
+    margin-right: 5px;
+}
+
+.map-panel .card-block {
+    padding: 0px;
+}
+
+.map-panel #map_wrapper {
+    height: 280px;
+}
+
+.map-panel #map_canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-content {
+    margin-bottom: 20px;
+}
+
+
+
+
+#review_modal {
+    /*.rating > input:checked ~ label, /* show gold star when clicked */
+    /* hover previous stars in list */
+}
+
+#review_modal .modal-title span {
+    color: #339900;
+    font-weight: bold;
+}
+
+#review_modal .modal-body {
+    background-color: #E5EAF2;
+}
+
+#review_modal .btn-success {
+    border: 1px solid #0896FF;
+    background-color: #0896FF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    padding: 3px 15px;
+    color: #fff;
+}
+
+#review_modal .btn-success:hover, #review_modal .btn-success:active, #review_modal .btn-success:focus {
+    background-color: $egrfontblue;
+    border-color: $egrfontblue;
+}
+
+#review_modal .btn-danger {
+    padding: 3px 15px;
+}
+
+#review_modal .padding-topbt {
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+#review_modal .control-label {
+    color: $egrfontblue;
+}
+
+#review_modal .rating {
+    float: right;
+}
+
+#review_modal .rating > label {
+    /*color:$bluecolor;*/
+    opacity: 0.6;
+    line-height: 15px;
+}
+
+#review_modal .rating > label:before {
+    font-size: 1.5em;
+    opacity: 0.7;
+}
+
+#review_modal .rating:not(:checked) > label:hover,
+#review_modal .rating:not(:checked) > label:hover ~ label {
+    color: $yellowcolor;
+    opacity: 1;
+}
+
+#review_modal .rating > input:checked + label:hover,
+#review_modal .rating > input:checked ~ label:hover,
+#review_modal .rating > label:hover ~ input:checked ~ label,
+#review_modal .rating > input:checked ~ label:hover ~ label {
+    color: $btnhoveryellow;
+    opacity: 1;
+}
+
+#review_modal .form-control {
+    border: 1px solid #D1DCD8;
+    height: 32px;
+}
+
+#review_modal .form-control:active, #review_modal .form-control:focus {
+    border: 1px solid #00B7F1;
+}
+
+#review_modal button.close {
+    position: relative;
+}
+
+.ssp {
+    color: $egrfontblue;
+    font-size: 1em;
+    vertical-align: top;
+    font-style: italic;
+    margin-right: 3px;
+}
+
+.egr-filter {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: solid 1px #e7e7e7;
+}
+
+.egr-filter .card-header {
+    background-color: #19406f;
+    color: #fff;
+    border-radius: 0px;
+    padding: 15px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.egr-filter .card-header h4 {
+    font-size: 1.2em;
+    color: #FFF;
+    margin: 0px;
+    line-height: 1.6;
+}
+
+.egr-filter .card-header h4 i {
+    margin-right: 5px;
+}
+
+.egr-filter .card-block {
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+}
+
+.egr-filter .card-block i {
+    margin-right: 5px;
+    font-size: 1.1em;
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all, 0.3s, ease;
+    -moz-transition: all, 0.3s, ease;
+    -ms-transition: all, 0.3s, ease;
+    -o-transition: all, 0.3s, ease;
+    -transition: all, 0.3s, ease;
+}
+
+.egr-filter .card-block .rotate {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.egr-filter .card-block .rtl-rotate {
+    -moz-transform: rotate(90deg) !important;
+    -ms-transform: rotate(90deg) !important;
+    -o-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    transform: rotate(90deg) !important;
+}
+
+.egr-filter .card-title {
+    font-weight: normal;
+    font-size: 1.1em;
+
+    .pull-xs-right {
+        height: 22px;
+    }
+}
+
+.egr-filter .nav-item {
+    color: $egrbluecolor;
+    cursor: pointer;
+
+    label {
+        font-weight: normal;
+
+        .yellow {
+            color: #fec524;
+        }
+
+        .grey {
+            color: #c1daf0;
+        }
+    }
+
+    .pull-right {
+        color: $activebluecolor;
+        font-weight: normal;
+        display: none;
+        margin-top: 6px;
+        font-size: 12px;
+    }
+
+    .form-control {
+        border: solid 1px #89d0ee;
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 5px;
+        height: 33px;
+        box-shadow: none;
+        border-radius: 2px !important;
+        border-collapse: collapse !important;
+        background-image: none !important;
+    }
+
+    .nav-link {
+        color: #777777;
+        font-size: 13px;
+
+        i {
+            color: $egrfontcolor;
+        }
+    }
+}
+
+.egr-filter .nav-item:hover .pull-right, .egr-filter .nav-item:active .pull-right, .egr-filter .nav-item:focus .pull-right {
+    display: inline-block;
+}
+
+.egr-filter-fav .card-block {
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+}
+
+.egr-filter-fav .card-block i {
+    margin-right: 5px;
+    font-size: 1.1em;
+    color: $yellowcolor;
+}
+
+.egr-filter-fav .card-block .nav-link {
+    color: #00B7F1;
+}
+
+.egr-filter-fav .card-block .nav-link:hover, .egr-filter-fav .card-block .nav-link:active, .egr-filter-fav .card-block .nav-link:focus {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.egr-filter-fav .card-block .nav-link:hover span, .egr-filter-fav .card-block .nav-link:active span, .egr-filter-fav .card-block .nav-link:focus span {
+    color: #fff;
+}
+
+.egr-info h4 {
+    padding: 0.3em;
+    font-size: 1.3em;
+    color: #003590;
+    padding-left: 0px;
+}
+
+.egr-filter .card-block.egr-no-pad {
+    padding-left: 0px;
+    padding-right: 0px;
+    min-height: 50px;
+    overflow: hidden;
+}
+
+.card-block-padding {
+    padding: 1.25rem 0.9rem .5rem;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.egr-info ul {
+    min-height: 150px;
+}
+
+.egr-info .nav-item {
+    min-height: 65px;
+    border-bottom: 1px dotted $yellowcolor;
+    margin-bottom: 10px;
+}
+
+.egr-info .nav-item .circle {
+    border: 0px solid;
+    background-color: #55AF32;
+    color: #fff;
+    font-size: 1.6em;
+}
+
+.egr-info .nav-item h6 {
+    color: #003185;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.egr-info .nav-item p {
+    color: #003185;
+    line-height: 15px;
+    font-size: 0.9em;
+}
+
+.egr-info .nav-item p a {
+    color: #00B7F1;
+}
+
+.egr-info .nav-item .no-ico {
+    padding-left: 0.5em;
+}
+
+.fa-caret-down, .fa-angle-down, .fa-angle-up {
+    color: #c2c2c2;
+    margin: 0px;
+    margin-left: 4px;
+    margin-top: -2px;
+}
+
+th.sorting_asc {
+    position: absolute !important;
+    left: 11px !important;
+}
+
+.right-sidebar {
+    height: auto;
+}
+
+.right-sidebar .egr-table-sorting {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-bottom: solid 1px #e7e7e7;
+    min-height: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.right-sidebar .egr-table-sorting .nav-item {
+    margin: 0px;
+    margin-left: -4px;
+    padding: 13px;
+}
+
+.right-sidebar .egr-table-sorting .nav-item .nav-link {
+    padding: 4px 10px;
+    border-radius: 3px;
+    color: #777;
+    font-weight: normal;
+    font-size: 13px;
+    padding-right: 10px;
+}
+
+.right-sidebar .egr-table-sorting .nav-item .nav-link:hover {
+    background-color: #f4f4f4;
+}
+
+.right-sidebar .egr-table-sorting .nav-item .nav-link span {
+    background-color: $yellowcolor;
+    padding: 0.7em;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.right-sidebar .egr-table-sorting .nav-item.egr-no-style {
+    background-color: #fafafa;
+    text-align: center;
+    border-right: 1px solid #F4f4f4;
+
+    .nav-link {
+        color: $egrfontblue;
+    }
+}
+
+.right-sidebar .egr-table-sorting .nav-item .active {
+    background-color: $bluecolor !important;
+    padding: 4px 10px;
+    border-radius: 3px;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.right-sidebar .egr-table-sorting .dropdown-menu {
+    border: 1px solid #00B7F1;
+    box-shadow: 0px 0px 3px rgba(52, 152, 68, 0.22);
+    padding: 0.05em;
+}
+
+.right-sidebar .egr-table-sorting .dropdown-menu a {
+    color: #00B7F1;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.right-sidebar .btn {
+    padding: 4px 12px;
+}
+
+
+.right-sidebar .row {
+    margin-right: 0px;
+}
+
+.right-sidebar #egr-tbl-hotels_wrapper .row:nth-child(2) div.col-md-12:nth-child(1) {
+    padding-right: 3px;
+}
+
+.right-sidebar .egr-hotels-container {
+    min-height: 645px;
+    border-radius: 5px;
+    margin-top: -20px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel {
+    display: block;
+    height: auto;
+    padding: 0px;
+    padding: 1.4em 0em;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all, 0.3s, ease;
+    -moz-transition: all, 0.3s, ease;
+    -ms-transition: all, 0.3s, ease;
+    -o-transition: all, 0.3s, ease;
+    -transition: all, 0.3s, ease;
+}
+
+.sorting_asc {
+    display: none;
+}
+
+.hotel-sm-desc {
+    display: none;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .flexslider {
+    margin: 0px;
+    border: 0px solid;
+    /*@include navigation(91%,5px,5px);*/
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .flexslider .flex-direction-nav {
+    display: none;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel:hover {
+    background-color: #F9f9f9;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-ht-pad {
+    /*padding: 0em 0.5em;*/
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel img {
+    width: 100%;
+    height: 170px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-title2 {
+    color: $egrfontblue;
+    font-size: 0.95em;
+    padding: 0.3em 0.5em;
+    margin: 0px;
+    line-height: 13px;
+    text-align: left;
+    font-style: italic;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-title2 .icon {
+    font-size: 1.3em;
+    float: left;
+    margin-right: 3px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .hotel-sm-desc {
+    width: 100%;
+    min-height: 80px;
+    background-color: #E5EAF2;
+    padding-top: 5px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite {
+    border: 1px solid $bluecolor;
+    border-radius: 2px;
+    -webkit-transition: all, 0.3s, ease;
+    -moz-transition: all, 0.3s, ease;
+    -ms-transition: all, 0.3s, ease;
+    -o-transition: all, 0.3s, ease;
+    -transition: all, 0.3s, ease;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite:hover, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite:active, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite:focus {
+    background-color: $bluecolor;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite:hover .nav-link, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite:active .nav-link, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite:focus .nav-link {
+    color: #fff;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-favorite .nav-link {
+    color: $bluecolor;
+    font-size: 12px;
+    font-style: italic;
+    padding: 0.2em 0.6em;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-price-d {
+    border-right: 0px solid;
+    display: inline-block;
+    float: right;
+    margin-top: -15px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-price-d .nav-link {
+    border-right: 0px solid;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-price-d .nav-link span:nth-child(2) {
+    font-style: italic;
+    color: #2d3e52;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .banner {
+    position: absolute;
+    top: 7px;
+    left: 19px;
+    width: 60px;
+    height: 30px;
+    z-index: 1;
+    background-color: #CD0A0A;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.68);
+    z-index: 99;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .banner .b-percent {
+    color: #fff;
+    width: 55px;
+    height: 50px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .banner:before {
+    position: absolute;
+    content: "";
+    right: -2px;
+    top: 0.03em;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-right: 3px solid #B41D1D;
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-35deg);
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .banner:after {
+    position: absolute;
+    content: "";
+    left: -2px;
+    top: 0.04em;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-right: 3px solid #B41D1D;
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(-140deg);
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel h4 {
+    font-size: 1.2em;
+    /*padding-bottom: 0.5em;*/
+    margin-bottom: 0px;
+    color: $egrfontblue;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.egr-s-hotel {
+    .hotel-adrs {
+        font-weight: normal;
+        font-size: 12px;
+        color: #777;
+        margin: 0px;
+        letter-spacing: 0.05em;
+
+        i {
+            margin-right: 1px;
+        }
+    }
+
+    .rating > label.grey {
+        color: #c1daf0 !important;
+    }
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-cond {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    color: $egrfontblue;
+    font-weight: bold;
+    float: right;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-cond span {
+    padding: 0.3em 0.4em;
+    background-color: $yellowcolor;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5em 0em;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review {
+    font-size: 12px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review i {
+    color: $yellowcolor;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review small {
+    font-style: italic;
+    font-size: 11px;
+    padding-left: 0.3em;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review .input-group-addon {
+    padding: 0.15em 0.35em;
+    position: absolute;
+    top: -2px;
+    font-style: italic;
+    border: 1px solid $yellowcolor;
+    background-color: transparent;
+    -webkit-transition: all, 0.3s, ease;
+    -moz-transition: all, 0.3s, ease;
+    -ms-transition: all, 0.3s, ease;
+    -o-transition: all, 0.3s, ease;
+    -transition: all, 0.3s, ease;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review span:nth-child(2) {
+    padding: 0.35em 0.35em;
+    background-color: transparent;
+    color: $yellowcolor;
+    margin-left: 30px;
+    border: 1px solid $yellowcolor;
+    border-left: 0px solid;
+    -webkit-transition: all, 0.3s, ease;
+    -moz-transition: all, 0.3s, ease;
+    -ms-transition: all, 0.3s, ease;
+    -o-transition: all, 0.3s, ease;
+    -transition: all, 0.3s, ease;
+    font-style: italic;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:hover .input-group-addon, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:active .input-group-addon, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:focus .input-group-addon {
+    background-color: $yellowcolor;
+    border: 1px solid #f6d386;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:hover .input-group-addon i, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:active .input-group-addon i, .right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:focus .input-group-addon i {
+    color: #fff;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:hover span:nth-child(2), .right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:active span:nth-child(2), .right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-detail .egr-review:focus span:nth-child(2) {
+    background-color: $yellowcolor;
+    color: #FFF;
+    border: 1px solid #f6d386;
+    border-left: 0px solid;
+}
+
+.egr-s-hotel .egr-hotel-facilities {
+    .bordered-ul {
+        display: inline-block;
+        border: 1px solid #e7e7e7;
+
+        .nav-item {
+            margin: 0px;
+            padding: 0px 8px;
+
+            .nav-link {
+                color: #465b83;
+            }
+        }
+
+        .nav-item:not(:last-of-type) {
+            border-right: 1px solid #e7e7e7;
+        }
+    }
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-desc {
+    padding-top: 0.4em;
+    padding-bottom: 0.6em;
+    color: #033073;
+    margin: 0px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-footer {
+    padding-bottom: 0.5em;
+
+    .btn {
+        margin-top: 10px;
+    }
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-footer .nav-item {
+    margin: 0px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-footer .nav-link {
+    font-weight: bold;
+    color: #465b83;
+    border-right: 1px solid #EFEFEF;
+    padding: 0em 0.8em;
+    padding-left: 0px;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-footer .nav-link:hover {
+    color: $activebluecolor;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-footer .no-b {
+    border-right: 0px solid transparent;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-footer .nav-link.active {
+    color: $activebluecolor;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-rent {
+    text-align: center;
+    padding-top: 0.6em;
+}
+
+.right-sidebar .egr-hotels-container .egr-s-hotel .egr-hotel-rent .grey {
+    background-color: #2d3e52;
+}
+
+.right-sidebar .egr-hotels-container .rating > label {
+    color: $yellowcolor;
+}
+
+.right-sidebar .egr-hotels-container .rating > label:before {
+    font-size: 1em;
+}
+
+#egr-hotel-tabs {
+    background-color: #E5EAF2;
+    border: 0px solid;
+}
+
+#egr-hotel-tabs li {
+    margin: 0px;
+    border-radius: 0px;
+    border-right: 1px solid #ddd;
+}
+
+#egr-hotel-tabs li a {
+    position: relative;
+    color: #3498db;
+}
+
+#egr-hotel-tabs li:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+#egr-hotel-tabs li:hover a {
+    color: #325C99;
+}
+
+#egr-hotel-tabs li .active {
+    border-radius: 0px;
+}
+
+#egr-hotel-tabs li .active:before {
+    position: absolute;
+    content: "\f0d7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: #fff;
+    top: 22px;
+    left: 39%;
+    z-index: 1;
+}
+
+#egr-hotel-tabs li .active:after {
+    position: absolute;
+    content: "\f107";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    color: #325C99;
+    top: 21px;
+    left: 37.8%;
+    z-index: 1;
+}
+
+#egr-hotel-tabs:before {
+    position: absolute;
+    content: "";
+    width: 96.2%;
+    height: 1px;
+    background-color: #325C99;
+    left: 16px;
+    top: 43px;
+}
+
+.tab-content {
+    padding-top: 40px;
+}
+
+#egr-hotel-gallery {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+#egr-hotel-gallery .slides li {
+    height: 460px;
+}
+
+#egr-hotel-gallery .slides img {
+    width: 100%;
+    height: 100%;
+}
+
+#egr-hotel-gallery .flex-control-thumbs li {
+    width: 6%;
+    float: left;
+    margin: 0;
+    margin-right: 3px;
+}
+
+#egr-hotel-gallery .flex-control-thumbs li img {
+    cursor: pointer;
+}
+
+#egr-hotel-gallery .flex-direction-nav a:before {
+    font-size: 18px;
+    color: #00B7F1;
+    margin-top: 3px;
+    margin-left: 11px;
+}
+
+#egr-hotel-gallery .flex-direction-nav .flex-next:before {
+    margin-left: 0px;
+    margin-right: 11px;
+}
+
+#egr-hotel-gallery .flex-direction-nav a {
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.23);
+    top: 75%;
+    right: 25px;
+}
+
+#egr-hotel-gallery .flex-direction-nav .flex-prev {
+    left: 25px;
+}
+
+.egr-hotel-n-det h3 {
+    color: $egrfontblue;
+    display: inline;
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 10px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+}
+
+.egr-hotel-n-det .fa-thumbs-o-up {
+    font-size: 1.4em;
+    font-style: italic;
+}
+
+.egr-hotel-n-det address {
+    padding-left: 5px;
+    color: $egrfontblue;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 0px;
+}
+
+.egr-hotel-n-det address i {
+    font-size: 1.2em;
+    text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.22);
+}
+
+.egr-hotel-n-det address a {
+    font-weight: bold;
+    font-size: 14px;
+    color: #00B7F1;
+}
+
+.egr-hotel-n-det address a:hover, .egr-hotel-n-det address a:active, .egr-hotel-n-det address a:focus {
+    text-decoration: underline;
+    color: $yellowcolor;
+}
+
+.egr-hotel-n-btns .btn-re {
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+.egr-hotel-n-btns .btn-re i {
+    vertical-align: inherit;
+    margin: 0px;
+}
+
+.tab-content {
+    padding-top: 20px;
+}
+
+#egr-flex-detail {
+    width: 22%;
+    min-height: 100px;
+    position: absolute;
+    background-color: transparent;
+    z-index: 9996;
+    top: 126px;
+    right: 30px;
+    text-align: right;
+}
+
+#egr-flex-detail .egr-fd-col {
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-height: 40px;
+}
+
+#egr-flex-detail .egr-fd-col p {
+    line-height: 0px;
+    font-size: 17px;
+    color: #2d3e52;
+}
+
+#egr-flex-detail .egr-fd-col .egr-rate {
+    padding: 0.3em;
+    background-color: $yellowcolor;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    font-size: 1.25em;
+}
+
+#egr-flex-detail .egr-fd-col .col-sm-3 {
+    line-height: 3.3em;
+    padding-left: 0.4em;
+}
+
+#egr-flex-detail .egr-hotel-cond {
+    color: #325C99;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0px;
+}
+
+#egr-hotel-re {
+    margin: 0px;
+    border: 0px solid;
+}
+
+#egr-hotel-re .slides {
+    height: 155px;
+}
+
+#egr-hotel-re .row {
+    margin: 0px;
+}
+
+#egr-hotel-re .egr-hotel-re-txt p {
+    width: 100%;
+    background-color: #E5EAF2;
+    height: 135px;
+    color: #315B98;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: left;
+    padding: 0.3em 1.7em;
+    margin: 0px;
+}
+
+#egr-hotel-re .egr-hotel-re-txt P:before {
+    position: absolute;
+    content: "\f0d7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    bottom: -11px;
+    color: #E5EAF2;
+    left: 10px;
+    z-index: 9999;
+    font-size: 18px;
+}
+
+#egr-hotel-re .egr-hotel-re-who {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    text-align: left;
+}
+
+#egr-hotel-re .egr-hotel-re-who img {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+}
+
+#egr-hotel-re .egr-hotel-re-who .user-r {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+#egr-hotel-re .egr-hotel-re-who p {
+    margin: 0px;
+    padding: 0.7em 0.5em;
+}
+
+#egr-hotel-re .egr-hotel-re-who span {
+    font-size: 12px;
+    display: inline;
+}
+
+#egr-hotel-re .egr-hotel-re-who span:nth-child(1) {
+    color: #325C99;
+    padding-right: 6px;
+    font-weight: 400;
+}
+
+#egr-hotel-re .egr-hotel-re-who span:nth-child(2) {
+    color: #080808;
+    font-size: 11px;
+}
+
+#egr-hotel-re .flex-direction-nav a {
+    width: 16px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.13);
+    opacity: 0.5;
+    top: 28%;
+    right: 0px;
+}
+
+#egr-hotel-re .flex-direction-nav a:hover {
+    background-color: #3498db;
+    opacity: 1;
+}
+
+#egr-hotel-re .flex-prev:before {
+    content: "\f0d9";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    margin-right: 6px;
+    font-size: 18px;
+    color: #3498db;
+    margin-top: 1px;
+}
+
+#egr-hotel-re .flex-next:before {
+    content: "\f0da";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    margin-right: 3px;
+    font-size: 18px;
+    color: #3498db;
+    margin-top: 1px;
+}
+
+#egr-hotel-re .flex-next:before:hover {
+    color: #fff !important;
+}
+
+#egr-hotel-re .flex-direction-nav .flex-prev {
+    left: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#egr-hotel-re .flex-direction-nav .flex-next {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#egr-hotel-re .flex-prev:hover:before, #egr-hotel-re .flex-next:hover:before {
+    color: #fff !important;
+}
+
+#egr-loc-l {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 7px;
+}
+
+.egr-filter-det {
+    border: 1px solid #D1DCF0;
+    box-shadow: none;
+}
+
+.egr-filter-det .card-header {
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #E5EAF2;
+    color: $egrfontblue;
+    padding: .45rem 1.25rem;
+}
+
+.egr-filter-det .card-block {
+    padding: 0.65rem;
+}
+
+.egr-filter-det .egr-h-img img {
+    width: 92%;
+    height: 55px;
+    border-radius: 3px;
+}
+
+.egr-filter-det .egr-h-det {
+    padding: 0px;
+    padding-left: 5px;
+    line-height: 10px;
+    display: inline-block;
+}
+
+.egr-filter-det .egr-h-det h5 {
+    color: #3498db;
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 7px;
+}
+
+.egr-filter-det .egr-h-det p {
+    color: #3498db;
+}
+
+.egr-filter-det .egr-h-det p small {
+    color: #999;
+}
+
+.egr-filter-det .egr-h-det .rating {
+    position: absolute;
+    top: 20px;
+}
+
+.egr-filter-det .nav-item {
+    position: relative;
+    min-height: 75px;
+    padding-top: 10px;
+    border-bottom: 1px dotted #D1DCF0;
+}
+
+.egr-filter-det .remove-link {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #D9D9D9;
+    cursor: pointer;
+}
+
+.egr-filter-det .remove-link:hover, .egr-filter-det .remove-link:focus, .egr-filter-det .remove-link:active {
+    color: $yellowcolor;
+}
+
+.egr-hotel-de-des .c1-col {
+    padding-left: 1.1rem;
+    padding-top: 0.6em;
+}
+
+.egr-hotel-de-des .c2-col {
+    padding-right: 0px;
+}
+
+.egr-hotel-de-des h4 {
+    color: $egrfontblue;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.egr-hotel-de-des p {
+    color: #2d3e52;
+}
+
+.egr-hotel-de-des p span {
+    color: $yellowcolor;
+    font-weight: bold;
+}
+
+.egr-hotel-de-des p i {
+    padding: 0.2em 0.25em;
+    border-radius: 50%;
+    background-color: $yellowcolor;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.egr-hotel-de-des .c2-col .egr-rightbar-det {
+    min-height: 200px;
+    background-color: #E5EAF2;
+    border: 1px solid #D1DCF0;
+}
+
+.egr-hotel-de-des .c2-col .p-h {
+    color: $egrfontblue;
+    font-size: 1.3em;
+}
+
+.egr-hotel-de-des .c2-col .fa-map-marker {
+    color: $egrfontblue;
+    font-size: 1.9em;
+}
+
+.egr-hotel-de-des .c2-col .fa-paypal {
+    padding: 0.3em 0.35em;
+    background-color: $egrfontblue;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.egr-hotel-de-des .c2-col .p-hs {
+    font-size: 13px;
+    color: $egrfontblue;
+    line-height: 15px;
+}
+
+.egr-hotel-de-des .c2-col .ri-head {
+    margin-bottom: 2px;
+    color: $egrfontblue;
+    color: #779bca;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.egr-hotel-de-des .c2-col .ul-ri {
+    margin-bottom: 10px;
+}
+
+.egr-hotel-de-des .c2-col .ul-ri li {
+    line-height: 1.3em;
+    font-style: italic;
+}
+
+.egr-hotel-de-des .c2-col .p-hs2 {
+    line-height: 22px;
+}
+
+.egr-hotel-de-des .c2-col .card-block {
+    padding-top: 0.7em;
+}
+
+.egr-hotel-de-des .c2-col .btn {
+    font-size: 14px;
+    width: 100%;
+}
+
+.egr-hotel-de-des .c2-col .btn-default {
+    background-color: #fff;
+    border: 1px solid #00B7F1;
+    color: #00B7F1;
+}
+
+.egr-hotel-de-des .c2-col .btn-default i {
+    padding-top: 3px;
+}
+
+.egr-hotel-de-des .c2-col .btn-default:hover, .egr-hotel-de-des .c2-col .btn-default:active, .egr-hotel-de-des .c2-col .btn-default:focus {
+    background-color: $egrfontblue;
+    color: #fff;
+}
+
+#egr-tab-availibality .alert {
+    padding: 5px 15px;
+}
+
+#egr-tab-availibality .alert h4 {
+    color: $egrfontblue;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#egr-tab-availibality form {
+    background-color: #E5EAF2;
+    border-top: 1px solid #D1DCF0;
+    border-bottom: 1px solid #D1DCF0;
+    padding: 15px 20px;
+    position: relative;
+    margin-bottom: 40px;
+    /* firefox 19+ */
+    /* ie */
+}
+
+#egr-tab-availibality form ::-webkit-input-placeholder {
+    color: $egrfontblue;
+}
+
+#egr-tab-availibality form ::-moz-placeholder {
+    color: $egrfontblue;
+}
+
+#egr-tab-availibality form :-ms-input-placeholder {
+    color: $egrfontblue;
+}
+
+#egr-tab-availibality form input:-moz-placeholder {
+    color: $egrfontblue;
+}
+
+#egr-tab-availibality form label {
+    font-size: 1em;
+    font-weight: bold;
+    color: $egrfontblue;
+}
+
+#egr-tab-availibality form .form-group:nth-child(1), #egr-tab-availibality form .form-group:nth-child(2) {
+    margin-right: 30px;
+}
+
+#egr-tab-availibality form .input-group:hover, #egr-tab-availibality form .input-group:active, #egr-tab-availibality form .input-group:focus {
+    /* firefox 19+ */
+    /* ie */
+}
+
+#egr-tab-availibality form .input-group:hover .form-control, #egr-tab-availibality form .input-group:hover .input-group-addon, #egr-tab-availibality form .input-group:active .form-control, #egr-tab-availibality form .input-group:active .input-group-addon, #egr-tab-availibality form .input-group:focus .form-control, #egr-tab-availibality form .input-group:focus .input-group-addon {
+    border-color: $egrfontblue;
+    background-color: #fff;
+    color: #3498db;
+}
+
+#egr-tab-availibality form .input-group:hover ::-webkit-input-placeholder, #egr-tab-availibality form .input-group:active ::-webkit-input-placeholder, #egr-tab-availibality form .input-group:focus ::-webkit-input-placeholder {
+    color: #3498db;
+}
+
+#egr-tab-availibality form .input-group:hover ::-moz-placeholder, #egr-tab-availibality form .input-group:active ::-moz-placeholder, #egr-tab-availibality form .input-group:focus ::-moz-placeholder {
+    color: #3498db;
+}
+
+#egr-tab-availibality form .input-group:hover :-ms-input-placeholder, #egr-tab-availibality form .input-group:active :-ms-input-placeholder, #egr-tab-availibality form .input-group:focus :-ms-input-placeholder {
+    color: #3498db;
+}
+
+#egr-tab-availibality form .input-group:hover input:-moz-placeholder, #egr-tab-availibality form .input-group:active input:-moz-placeholder, #egr-tab-availibality form .input-group:focus input:-moz-placeholder {
+    color: #3498db;
+}
+
+#egr-tab-availibality form .input-group-addon {
+    font-size: 0.7rem;
+    background-color: #fff;
+    border: 1px solid #D1DCF0;
+    border-radius: 0px;
+    color: $egrfontblue;
+    cursor: pointer;
+}
+
+#egr-tab-availibality form .input-group-addon:active, #egr-tab-availibality form .input-group-addon:hover, #egr-tab-availibality form .input-group-addon:focus {
+    background-color: #3498db;
+    color: #fff;
+}
+
+#egr-tab-availibality form .form-control {
+    height: 30px;
+    font-size: 14px;
+    border: 1px solid #D1DCF0;
+    border-right: 0px solid;
+    background-color: #fff;
+}
+
+#egr-tab-availibality form .btn-primary {
+    float: right;
+}
+
+#egr-tab-availibality .egr-hot-res-table thead tr th {
+    border: 1px solid #96B2D9;
+    background-color: #0B418E;
+    color: #fff;
+    cursor: default;
+    padding: 0.4em 0.7em;
+    vertical-align: inherit;
+}
+
+#egr-tab-availibality .egr-hot-res-table thead tr th:hover, #egr-tab-availibality .egr-hot-res-table thead tr th:active, #egr-tab-availibality .egr-hot-res-table thead tr th:focus {
+    background-color: $egrfontblue;
+}
+
+#egr-tab-availibality .egr-hot-res-table thead tr th.active {
+    background-color: $egrfontblue;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td {
+    color: $egrfontblue;
+    border: 1px solid #96B2D9;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td span {
+    color: #005780;
+    font-size: 0.8em;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td i {
+    color: #005780;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td i.fa-caret-right {
+    color: $btnhoveryellow;
+    margin-right: 3px;
+}
+
+#egr-tab-availibality .egr-hot-res-table .condition {
+    padding: 10px 5px 10px 22px;
+    line-height: 1.1em;
+}
+
+#egr-tab-availibality .egr-hot-res-table .condition ul {
+    list-style: disc;
+}
+
+#egr-tab-availibality .egr-hot-res-table .condition ul li i {
+    display: block;
+}
+
+#egr-tab-availibality .egr-hot-res-table .condition ul li {
+    margin-top: 5px;
+}
+
+#egr-tab-availibality .egr-hot-res-table .condition ul span {
+    opacity: 0.9;
+}
+
+#egr-tab-availibality .egr-hot-res-table .max {
+    text-align: right;
+}
+
+#egr-tab-availibality .egr-hot-res-table .max li {
+    display: inline;
+}
+
+#egr-tab-availibality .egr-hot-res-table .max .med {
+    font-size: 0.85em;
+}
+
+#egr-tab-availibality .egr-hot-res-table .max .sm {
+    font-size: 0.67em;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td:nth-child(1) {
+    /*border: 0px solid;*/
+    border-bottom: 1px solid #96B2D9;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td:nth-child(1) .room-title {
+    color: #3498db;
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td:nth-child(1) ul li {
+    line-height: 20px;
+    display: inline-block;
+    margin: 3px;
+    color: #339900;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td:nth-child(1) ul li i {
+    font-size: 15px;
+    margin-right: 3px;
+    color: #339900;
+}
+
+#egr-tab-availibality .egr-hot-res-table tbody tr td:nth-child(1) p {
+    display: block;
+    color: $egrfontblue;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.fixed {
+    top: 0;
+    position: fixed;
+    width: auto;
+    display: none;
+    border: none;
+}
+
+.fixed td {
+    border: 0px solid !important;
+}
+
+@media (min-width: 992px) {
+    .egr-ht-pad {
+        padding-right: 0px !important;
+        width: 70%;
+    }
+    /*.close {
+        right: 5px !important;
+    }*/
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1130px;
+    }
+}
+
+@-webkit-keyframes icon-beat {
+    0% {
+        -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+        transform: scale(2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes icon-beat {
+    0% {
+        -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+        transform: scale(2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+/** {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}*/
+.lable-checkbox {
+    display: inline-flex;
+    position: relative;
+    padding: 0.3rem 0rem;
+    line-height: 15px;
+    font-weight: normal;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 0px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lable-checkbox i {
+    display: inline;
+    height: 22px;
+    position: relative;
+    top: 6px;
+    font-style: normal;
+    color: $egrfontcolor;
+}
+
+.label-checkbox .pull-right {
+    margin-top: 3px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + i:before {
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    height: 10px;
+    width: 10px;
+    display: inline;
+}
+
+input[type="checkbox"]:checked + i {
+    position: relative;
+}
+
+input[type="checkbox"]:checked + i + span {
+    transition: all 0.1s ease;
+}
+
+input[type="checkbox"] + i:before {
+    content: "\f096";
+}
+
+input[type="checkbox"]:checked + i:before {
+    content: "\f046";
+}
+
+input[type="checkbox"]:checked + i + span,
+input[type="checkbox"]:checked + i:before {
+    color: $egrfontcolor;
+}
+
+td select {
+    height: 28px !important;
+}

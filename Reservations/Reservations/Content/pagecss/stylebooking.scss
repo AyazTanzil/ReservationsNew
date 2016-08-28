@@ -1,0 +1,828 @@
+﻿/*-----------------------------------
+All Rights Reserved.
+www.egress.club
+---------
+1 Typography
+2 
+2.1 Header
+2.2 Search Section
+2.3 Section 2
+2.3 Section 3
+
+----------------
+------------------------------------*/
+
+/*------------ 1 Typography --------------------*/
+@import "stylehf.scss";
+
+/*------------ 2 --------------------
+-------------------->->->->->------------- */
+.fa {
+    margin-right: 3px;
+}
+
+.wrapper-booking {
+    height: 455px;
+}
+
+.circle-steps {
+    margin: 2em 0px 1em;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $egrbggrey;
+    z-index: -2;
+    border-top: 1px solid #D1DCF0;
+    border-bottom: 1px solid #D1DCF0;
+
+    li {
+        width: 33%;
+        text-align: center;
+        line-height: 2em;
+        border-radius: 1em;
+        display: inline-block;
+        color: white;
+        position: relative;
+
+        span, strong {
+            color: $egrfontblue;
+            position: absolute;
+            display: block;
+            width: 100%;
+            text-align: left;
+            top: -11px;
+        }
+
+        strong {
+            text-align: right;
+            right: 5em;
+        }
+    }
+
+    li:nth-child(2) span {
+        top: -6px;
+        left: -3em;
+    }
+
+    a {
+        display: block;
+        width: 2em;
+        height: 2em;
+        position: relative;
+        background: dodgerblue;
+        color: #fff;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+    }
+
+    li::before {
+        content: '';
+        position: absolute;
+        top: 1.3em;
+        left: -12.6em;
+        width: 25em;
+        height: .2em;
+        background: dodgerblue;
+        z-index: 0;
+    }
+
+    li:nth-child(3)::after {
+        content: '';
+        position: absolute;
+        top: 0.9em;
+        right: 2em;
+        width: 10em;
+        height: .2em;
+        background: lightblue;
+        z-index: 0;
+    }
+
+    li:nth-child(3) span {
+        left: -4em;
+    }
+
+    li:first-child span {
+        margin-left: 3em;
+    }
+
+    li:first-child::before {
+        top: 0.9em;
+        width: 10em;
+        left: 2em;
+    }
+
+    .active a {
+        background: dodgerblue;
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+    }
+
+    .active ~ li a {
+        background: lightblue;
+    }
+
+    .active ~ li::before {
+        background: lightblue;
+        top: 0.9em;
+    }
+}
+
+.egr-b-sm-i {
+    padding: 0.9em;
+    color: #226D50;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #E0F0D8;
+    border-bottom: 3px solid #D6E9D0;
+    margin-bottom: 2.5em;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #D1DCD8;
+}
+
+.padding-bottom {
+    padding-bottom: 1.4em;
+}
+
+.margin-bottom {
+    margin-bottom: 1em;
+}
+
+.left-sidebar {
+
+    .egr-l-r1 {
+        ul {
+            padding-bottom: 1em;
+            border-bottom: 1px solid #D1DCD8;
+        }
+
+        li {
+            color: #339900;
+            line-height: 1.6em;
+        }
+
+        li:first-child {
+            font-weight: bold;
+        }
+    }
+
+    .changeyl {
+        color: $activebluecolor;
+        text-decoration: underline;
+        font-size: 0.9em;
+        float: right;
+        font-style: italic;
+    }
+
+    .more {
+        float: left;
+        font-size: 1.1em;
+        margin: 1em 0px;
+    }
+
+    .egr-l-r1-pl {
+        margin-bottom: 0.5em;
+        min-height: 60px;
+        background-color: $egrbggrey;
+        box-shadow: 0px 0px 1px rgba(0,0,0,0.12);
+        border-radius: 2px;
+
+        h4 {
+            color: $egrfontblue;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+
+        .price {
+            font-style: italic;
+            text-align: right;
+        }
+    }
+
+    .egr-l-r1-pdesc1, .egr-l-r1-pdesc2 {
+        color: #00359F;
+        text-align: left;
+        margin: 0px;
+        font-size: 0.9em;
+        padding-left: 8px;
+    }
+
+    .egr-l-r1-pdesc2 {
+        line-height: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .egr-l-r1-whyr_l {
+        border: 1px solid #D1DCF0;
+        box-shadow: none;
+
+        .card-header {
+            font-weight: bold;
+            font-size: 1.2em;
+            background-color: $egrbggrey;
+            color: $egrfontblue;
+            padding: .45rem 0.4rem;
+        }
+
+        .card-block {
+            padding: 0.65rem 0rem;
+        }
+
+        .card-block li > * {
+            padding: 10px;
+            flex: 1 100%;
+        }
+
+        .card-block li {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            padding-bottom: 1em;
+
+            i {
+                flex: 0 0;
+                color: #339900;
+                font-size: 1.2em;
+            }
+
+            aside {
+                padding: 0px;
+                padding-top: 5px;
+                flex: 3 0px;
+                text-align: left;
+
+                h4, p {
+                    margin: 0px;
+                    color: #00359f;
+                }
+
+                h4 {
+                    font-size: 1em;
+                    font-weight: bold;
+                }
+
+                p {
+                    line-height: 1.2em;
+                    font-size: 0.88em;
+                }
+            }
+        }
+    }
+}
+
+.right-sidebar {
+
+    .flexslider {
+        margin: 0px;
+        border: 0px solid;
+    }
+
+    .egr-ap-det-cov {
+        .flex-control-nav {
+            display: none;
+        }
+
+        @include navigation(91%,5px,5px);
+
+        .flex-direction-nav a {
+            width: 25px;
+            height: 25px;
+        }
+
+        .flex-direction-nav .flex-next:before {
+            margin-right: 8px;
+        }
+
+        .flex-direction-nav a:before {
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        padding-right: 5px;
+    }
+
+    .egr-ap-det-cov .cimg {
+        width: 100%;
+        height: 222px;
+    }
+
+    .egr-ap-det-cov {
+        position: relative;
+
+        .tooltip-span img {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        .egr-apr-rev-det {
+            position: absolute;
+            content: "";
+            top: 20px;
+            left: 0px;
+            background-color: rgba(255,255,255,0.9);
+            padding: 0.5em;
+            z-index: 1;
+            width: 135px;
+            text-align: center;
+
+            h4 {
+                color: $activebluecolor;
+                margin: 0px;
+                font-size: 1.1em;
+                font-weight: bold;
+
+                small {
+                    font-size: 0.6em;
+                }
+            }
+
+            p {
+                color: $egrfontcolor;
+                margin: 0px;
+                font-size: 0.7em;
+            }
+        }
+    }
+
+    .egr-ap-det-thumbs li .img {
+        width: 100%;
+        height: 3.946em;
+        border-bottom: 3px solid #333;
+    }
+
+    .egr-ap-det-thumbs li:last-child .img {
+        border: 0px solid;
+    }
+
+    .egr-ap-det-thumbs {
+        .tooltip-span img {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+    }
+
+    .egr-ap-det-desc {
+        margin-bottom: 2em;
+
+        .egr-ap-name {
+            color: $egrfontblue;
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+
+        .fa-thumbs-o-up {
+            color: $btnhoveryellow;
+            margin-left: 5px;
+            font-size: 1.3em;
+            font-style: italic;
+        }
+
+        address {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            margin-bottom: 0px;
+
+            i {
+                flex: 0 0;
+                color: $bluecolor;
+                font-size: 1.3em;
+                padding-right: 3px;
+            }
+
+            p {
+                font-size: 0.89em;
+                color: $egrfontblue;
+                padding: 0px;
+                flex: 4 0px;
+                text-align: left;
+                margin-bottom: 0px;
+            }
+        }
+
+        .egr-g-rate {
+            color: #339900;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .egr-check-inout {
+            li {
+                margin-bottom: 10px;
+            }
+
+            h4, p {
+                margin: 0px;
+            }
+
+            h4 {
+                color: $egrfontblue;
+                font-size: 1.1em;
+            }
+
+            p {
+                color: $egrfontcolor;
+                font-size: 0.9em;
+
+                .btn {
+                    margin-left: 10px;
+                    padding: 5px 10px;
+                    font-size: 0.9em;
+                    color: $bluecolor;
+                    background-color: #fff;
+                    border: 1px solid $bluecolor;
+
+                    &:hover, &:focus, &:active {
+                        background-color: $activebluecolor;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .egr-b-sm-i {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        margin-bottom: 1em;
+
+        i {
+            flex: 0 0;
+        }
+
+        span {
+            flex: 4 0;
+        }
+
+        .fa-angle-right {
+            padding: 0.3em 0.6em;
+            border-radius: 50%;
+            background-color: #339900;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .fa-check-circle {
+            color: #339900;
+            margin-right: 10px;
+            font-size: 1.8em;
+        }
+    }
+
+    .egr-booking-person-det {
+        border-radius: 1px;
+        border: 1px solid $activebluecolor;
+
+        .card-header {
+            background-color: $activebluecolor;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1em;
+            padding: .31rem 0.4rem;
+            border-radius: 1px;
+        }
+
+        .card-block {
+            min-height: 200px;
+            background-color: #E6EDF6;
+        }
+    }
+
+    form {
+        h5 {
+            color: $egrfontblue;
+            margin: 0px;
+            font-size: 1em;
+            font-weight: bold;
+            padding-left: 0.5em;
+        }
+
+        label {
+            color: $egrfontblue;
+            font-size: 1em;
+            font-weight: bold;
+            margin: 0px;
+            display: block;
+            width: 100%;
+        }
+
+        .form-control {
+            border: 1px solid #D1DCD8;
+            height: 32px;
+            border-radius: 3px;
+            font-size: 12px;
+            background-color: #fff;
+
+            &:active, &:focus {
+                border-color: $egrfontblue;
+            }
+        }
+
+        select {
+            color: $egrfontblue;
+            display: inline;
+        }
+
+        .row {
+            padding-left: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .email-for {
+            padding: 0.3em 0.7em;
+            background-color: #ABD1A5;
+            color: #184700;
+            font-style: italic;
+            font-size: 0.95em;
+            position: relative;
+            display: block;
+            line-height: 1.5em;
+            border-radius: 3px;
+        }
+
+        .email-for:before {
+            position: absolute;
+            content: "\f0d9";
+            color: #ABD1A5;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 26px;
+            left: -7px;
+            top: 5px;
+        }
+
+        .btn-no {
+            background-color: #B6C3D9;
+            color: $egrfontblue;
+            padding: 0.4em 0.8em;
+            font-size: 13px;
+
+            i {
+                font-size: 1.4em;
+            }
+        }
+
+        .checkbox {
+            display: inline;
+            margin: 0px;
+            margin-right: 10px;
+        }
+
+        .sp {
+            display: inline;
+            color: $egrfontblue;
+            font-size: 13px;
+
+            a {
+                text-decoration: underline;
+                font-weight: bold;
+                font-size: 14px;
+                color: $activebluecolor;
+            }
+        }
+
+        .det {
+            padding-top: 1.8em;
+        }
+
+        .egr-ot-h41 {
+            color: $egrfontblue;
+            font-size: 1.1em;
+            margin: 0px;
+        }
+
+        .egr-ot-p1 {
+            color: $egrfontblue;
+            font-size: 0.9em;
+
+            i {
+                padding: 0.3em 0.5em;
+                background-color: $activebluecolor;
+                color: #fff;
+                border-radius: 3px;
+            }
+        }
+
+        .egr-ot-p2 {
+            color: $egrfontblue;
+            padding-bottom: 0.7em;
+            margin-bottom: 0.7em;
+            border-bottom: 1px solid #D1DcD8;
+        }
+
+        input {
+            vertical-align: middle;
+        }
+
+        .free {
+            color: #fff;
+            padding: 0em 0.4em;
+            background-color: $greencolor;
+            border-radius: 2px;
+            font-size: 0.7em;
+        }
+
+        h4 {
+            color: $egrfontblue;
+            font-size: 1em;
+            margin: 0px;
+            font-weight: bold;
+        }
+
+        p {
+            color: $egrfontblue;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .padding-top {
+            padding-top: 1.5em;
+        }
+
+        .border-dashed {
+            border-bottom: 3px dashed #e5d5d5;
+        }
+
+        .incl {
+            li {
+                color: $egrfontblue;
+            }
+
+            padding-top: 1em;
+
+            i {
+                color: #339900;
+            }
+        }
+    }
+
+    .backg-g {
+        background-color: #F5F5F5;
+        border-radius: 3px;
+        padding-top: 10px;
+    }
+
+    .btn-checkb {
+        border: 1px solid #0896FF;
+        color: #0896FF;
+        font-size: 1.4em;
+        background-color: #fff;
+        padding: 6px 20px;
+        font-weight: bold;
+
+        &:hover, &:active, &:focus {
+            border-color: $egrfontblue;
+            color: $egrfontblue;
+        }
+    }
+
+    .btn-booknow {
+        border: 1px solid #0896FF;
+        background-color: #0896FF;
+        box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+        font-size: 1.4em;
+        padding: 6px 20px;
+        color: #fff;
+
+        &:hover, &:active, &:focus {
+            background-color: $egrfontblue;
+            border-color: $egrfontblue;
+        }
+    }
+
+    .cbl {
+        border-bottom: 1px solid $egrfontblue;
+    }
+
+    .cbl .row {
+        margin-bottom: 0px;
+    }
+
+    .card-footer {
+        background-color: $egrbggrey;
+
+        .row {
+            margin-bottom: 0px;
+        }
+
+        p {
+            margin: 0px;
+            color: $egrfontblue;
+            font-size: 13px;
+            display: inline;
+            float: left;
+        }
+    }
+}
+
+.fa-user, .fa-credit-card {
+    color: $egrfontblue;
+}
+
+.calendar-det {
+
+        ::-webkit-input-placeholder {
+            color: $egrfontblue;
+        }
+
+        ::-moz-placeholder {
+            color: $egrfontblue;
+        }
+        /* firefox 19+ */
+        :-ms-input-placeholder {
+            color: $egrfontblue;
+        }
+        /* ie */
+        input:-moz-placeholder {
+            color: $egrfontblue;
+        }
+
+        label {
+            font-size: 1em;
+            font-weight: bold;
+            color: $egrfontblue;
+        }
+
+        .form-group:nth-child(1), .form-group:nth-child(2) {
+            margin-right: 30px;
+        }
+
+        .input-group {
+            &:hover, &:active, &:focus {
+                .form-control, .input-group-addon {
+                    border-color: $egrfontblue;
+                    background-color: #fff;
+                    color: $activebluecolor;
+                }
+
+                ::-webkit-input-placeholder {
+                    color: $activebluecolor;
+                }
+
+                ::-moz-placeholder {
+                    color: $activebluecolor;
+                }
+                /* firefox 19+ */
+                :-ms-input-placeholder {
+                    color: $activebluecolor;
+                }
+                /* ie */
+                input:-moz-placeholder {
+                    color: $activebluecolor;
+                }
+            }
+        }
+
+        .input-group-addon {
+            font-size: 0.7rem;
+            background-color: #fff;
+            border: 1px solid #D1DCF0;
+            border-radius: 0px;
+            color: $egrfontblue;
+            cursor: pointer;
+
+            &:active, &:hover, &:focus {
+                background-color: $activebluecolor;
+                color: #fff;
+            }
+        }
+
+        .form-control {
+            height: 36px;
+            font-size: 14px;
+            border: 1px solid #D1DCF0;
+            border-right: 0px solid;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            float: right;
+        }
+    }

@@ -3,10 +3,476 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@section Head{
+    <link href="~/Content/pagecss/stylehome.min.css" rel="stylesheet" />
+}
 
-@section scripts
+<!--  Search Panel Section -->
+<section class="egr-msrch-bg">
+    <div class="container egr-search-card wow fadeInLeft">
+        <div class="row egr-padding">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 left-side">
+                <div class="search-panel-wrapper">
+                    <div class="search-tab">
+                        <nav role="tablist">
+                            <a class="nav-link active Rem" onclick="ChangeTab(this)" id="Hotel" href="#egr-hotel-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-bed margin-right"></i><%= GetLocalResourceObject("32") %></a>
+                            <a class="nav-link Rem" id="Isteraha" onclick="ChangeTab(this)" href="#egr-isteraha-form" data-tab="egr-isteraha-form" data-toggle="tab" role="tab"><i class="fa fa-cutlery margin-right"></i><%= GetLocalResourceObject("914") %></a>
+                            <a class="nav-link Rem" id="Apartment" onclick="ChangeTab(this)" href="#egr-app-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i><%= GetLocalResourceObject("15") %></a>
+                            <a class="nav-link Rem" id="Villa" onclick="ChangeTab(this)" href="#egr-vila-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-home margin-right"></i>Villa</a>
+                            <a class="nav-link Rem" id="Villa1" onclick="ChangeTab(this)" href="#egr-wedding-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i>Wedding Hall</a>
+                        </nav>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active Rem" id="egr-hotel-form">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-search fa-2x egr-search-icon"></i>
+                                    <h4 class="egr-srch-head1"><%= GetLocalResourceObject("915") %> <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
+                                    <h6 class="egr-srch-head2">
+                                        <br />
+                                        <%= GetLocalResourceObject("916") %>
+                                    </h6>
+                                </div>
+                                <div class="card-block">
+                                    <form id="SearchForm" role="form" method="post" data-parsley-validate>
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-side">
+                                                <fieldset class="form-group">
+                                                    <label for="formGroupExampleInput"><%= GetLocalResourceObject("906") %></label>
+                                                    <input type="text" class="form-control Destination" data-code="174" data-level="Country"
+                                                           required data-parsley-required-message="<%= GetLocalResourceObject(" 907")%>"
+                                                    name="Destination" id="DestinationHotel" placeholder="<%= GetLocalResourceObject("907") %>" />
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 hidden-md-up">
+                                                <h6><%= GetLocalResourceObject("918") %></h6>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 egr-no-pad right-side">
+                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left-side">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("102") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control egr-calendar" id="CheckIn"
+                                                                   required data-parsley-required-message="<%= GetLocalResourceObject(" 897")%>"
+                                                            name="CheckIn" placeholder="<%= GetLocalResourceObject("919") %>" />
+                                                            <div class="input-group-addon" id="btn-chk-in"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  right-side">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("103") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control egr-calendar" id="CheckOut"
+                                                                   required data-parsley-required-message="<%= GetLocalResourceObject(" 897")%>"
+                                                            name="CheckOut" placeholder="<%= GetLocalResourceObject("920") %>" />
+                                                            <div class="input-group-addon" id="btn-chk-out"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--                                   ----------------- Second Row -------------->
+                                            <div class="col-xs-12 egr-no-pad">
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("921") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Adults" value="0 Adults" name="Adults" id="Adults" />
+                                                            <div class='input-group-addon no-radius minus-it' data-field="Adults"><i class="fa fa-minus"></i></div>
+                                                            <div class='input-group-addon plus-it' data-field="Adults"><i class="fa fa-plus"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("922") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Kids" value="0 Kids" name="Kids" id="Kids" />
+                                                            <div class='input-group-addon no-radius minus-it' data-field="Kids"><i class="fa fa-minus"></i></div>
+                                                            <div class='input-group-addon plus-it' data-field="Kids"><i class="fa fa-plus"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("923") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Infants" value="0 Infants" name="Infants" id="Infants" />
+                                                            <div class='input-group-addon no-radius minus-it' data-field="Infants"><i class="fa fa-minus"></i></div>
+                                                            <div class='input-group-addon plus-it' data-field="Infants"><i class="fa fa-plus"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <label for="exampleInputAmount" class="empty-lbl"></label>
+                                                    <button type="submit" id="HotelSearch" class="btn btn-yellow btn-sm spcl-padding" value=""><span class="fa fa-search button-icon"></span><%= GetLocalResourceObject("924") %></button>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xs-12 col-sm-12">
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane Rem" id="egr-isteraha-form">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-search fa-2x egr-search-icon"></i>
+                                    <h4 class="egr-srch-head1"><%= GetLocalResourceObject("925") %> <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
+                                    <h6 class="egr-srch-head2">
+                                        <br />
+                                        <%= GetLocalResourceObject("916") %>
+                                    </h6>
+                                </div>
+                                <div class="card-block">
+                                    <form id="IsterahaSearchForm" role="form" method="post" data-parsley-validate>
+                                        <div class="row">
+                                            <!--------------- First Row   -------------------->
+                                            <!--------------- First Row   -------------------->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-side">
+
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 egr-no-pad">
+                                                    <fieldset class="form-group">
+                                                        <label for="formGroupExampleInput"><%= GetLocalResourceObject("906") %></label>
+                                                        <input type="text" class="form-control Destination3" data-code="174" data-level="Country"
+                                                               required data-parsley-required-message="<%= GetLocalResourceObject(" 907")%>"
+                                                        name="Destination3" id="Destination3" placeholder="<%= GetLocalResourceObject("907") %>" />
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-xs-12 egr-no-pad">
+
+
+                                                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 egr-no-pad">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputAmount"><%= GetLocalResourceObject("927") %></label>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="MaxCapicity" name="MaxCapicity" value="500" placeholder="<%= GetLocalResourceObject(" 927") %>" />
+                                                                <div class='input-group-addon no-radius minus-it' data-field="MaxCapicity"><i class="fa fa-minus"></i></div>
+                                                                <div class='input-group-addon plus-it' data-field="MaxCapicity"><i class="fa fa-plus"></i></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-5" style="padding-top: 2.2em">
+                                                        <button type="submit" id="IsterahaSearch" class="btn btn-yellow btn-sm spcl-padding" style="font-size: 1em; padding: 0.4em 1.4em 0.1em;"><span class="fa fa-search button-icon" style="display: inline-block; margin-right: 5px"></span>Search Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 right-side ">
+                                                <h6><%= GetLocalResourceObject("928") %></h6>
+                                                <div class="egr-box margin-top">
+                                                    <table id="SearchByCountry">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><%= GetLocalResourceObject("929") %></td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            @*<%-- ******************************************************************* --%>*@
+                                            <div class="cleafix"></div>
+
+
+                                            <div class="col-xs-12 col-sm-12" style="padding-top: 2em;">
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane Rem" id="egr-app-form">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-search fa-2x egr-search-icon"></i>
+                                    <h4 class="egr-srch-head1">Search Apartment <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
+                                    <h6 class="egr-srch-head2">
+                                        <br />
+                                        <%= GetLocalResourceObject("916") %>
+                                    </h6>
+                                </div>
+                                <div class="card-block">
+                                    <form id="SearchAppForm" role="form" method="post" data-parsley-validate>
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-side">
+                                                <fieldset class="form-group">
+                                                    <label for="formGroupExampleInput"><%= GetLocalResourceObject("906") %></label>
+                                                    <input type="text" class="form-control Destination" data-code="174" data-level="Country"
+                                                           required data-parsley-required-message="<%= GetLocalResourceObject(" 907")%>"
+                                                    name="Destination" id="DestinationHotel" placeholder="<%= GetLocalResourceObject("907") %>" />
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 hidden-md-up">
+                                                <h6><%= GetLocalResourceObject("918") %></h6>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 egr-no-pad right-side">
+                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 left-side">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("102") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control egr-calendar" id="CheckIn"
+                                                                   required data-parsley-required-message="<%= GetLocalResourceObject(" 897")%>"
+                                                            name="CheckIn" placeholder="<%= GetLocalResourceObject("919") %>" />
+                                                            <div class="input-group-addon" id="btn-chk-in"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  right-side">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("103") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control egr-calendar" id="CheckOut"
+                                                                   required data-parsley-required-message="<%= GetLocalResourceObject(" 897")%>"
+                                                            name="CheckOut" placeholder="<%= GetLocalResourceObject("920") %>" />
+                                                            <div class="input-group-addon" id="btn-chk-out"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--                                   ----------------- Second Row -------------->
+                                            <div class="col-xs-12 egr-no-pad">
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("921") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Adults" value="0 Adults" name="Adults" id="Adults" />
+                                                            <div class='input-group-addon no-radius minus-it' data-field="Adults"><i class="fa fa-minus"></i></div>
+                                                            <div class='input-group-addon plus-it' data-field="Adults"><i class="fa fa-plus"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("922") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Kids" value="0 Kids" name="Kids" id="Kids" />
+                                                            <div class='input-group-addon no-radius minus-it' data-field="Kids"><i class="fa fa-minus"></i></div>
+                                                            <div class='input-group-addon plus-it' data-field="Kids"><i class="fa fa-plus"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputAmount"><%= GetLocalResourceObject("923") %></label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Infants" value="0 Infants" name="Infants" id="Infants" />
+                                                            <div class='input-group-addon no-radius minus-it' data-field="Infants"><i class="fa fa-minus"></i></div>
+                                                            <div class='input-group-addon plus-it' data-field="Infants"><i class="fa fa-plus"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <label for="exampleInputAmount" class="empty-lbl"></label>
+                                                    <button type="submit" id="AppartmentSearch" class="btn btn-yellow btn-sm spcl-padding" value=""><span class="fa fa-search button-icon"></span><%= GetLocalResourceObject("924") %></button>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xs-12 col-sm-12">
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane Rem" id="egr-vila-form">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-search fa-2x egr-search-icon"></i>
+                                    <h4 class="egr-srch-head1">Search Vila <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
+                                    <h6 class="egr-srch-head2">
+                                        <br />
+                                        <%= GetLocalResourceObject("916") %>
+                                    </h6>
+                                </div>
+                                <div class="card-block">
+                                    <form id="VillaSearchForm" role="form" method="post" data-parsley-validate>
+                                        <div class="row">
+                                            <!--------------- First Row   -------------------->
+                                            <!--------------- First Row   -------------------->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-side">
+
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 egr-no-pad">
+                                                    <fieldset class="form-group">
+                                                        <label for="formGroupExampleInput"><%= GetLocalResourceObject("906") %></label>
+                                                        <input type="text" class="form-control Destination3" data-code="174" data-level="Country"
+                                                               required data-parsley-required-message="<%= GetLocalResourceObject(" 907")%>"
+                                                        name="Destination3" id="VillaDestination3" placeholder="<%= GetLocalResourceObject("907") %>" />
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-xs-12 egr-no-pad">
+
+
+                                                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 egr-no-pad">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputAmount"><%= GetLocalResourceObject("927") %></label>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="MaxCapicity" name="MaxCapicity" value="500" placeholder="<%= GetLocalResourceObject(" 927") %>" />
+                                                                <div class='input-group-addon no-radius minus-it' data-field="MaxCapicity"><i class="fa fa-minus"></i></div>
+                                                                <div class='input-group-addon plus-it' data-field="MaxCapicity"><i class="fa fa-plus"></i></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-5" style="padding-top: 2.2em">
+                                                        <button type="submit" id="VillaSearch" class="btn btn-yellow btn-sm spcl-padding" style="font-size: 1em; padding: 0.4em 1.4em 0.1em;"><span class="fa fa-search button-icon" style="display: inline-block; margin-right: 5px"></span>Search Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 right-side ">
+                                                <h6><%= GetLocalResourceObject("928") %></h6>
+                                                <div class="egr-box margin-top">
+                                                    <table id="SearchByCountry">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><%= GetLocalResourceObject("929") %></td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            @*<%-- ******************************************************************* --%>*@
+                                            <div class="cleafix"></div>
+
+
+                                            <div class="col-xs-12 col-sm-12" style="padding-top: 2em;">
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane Rem" id="egr-wedding-form">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fa fa-search fa-2x egr-search-icon"></i>
+                                    <h4 class="egr-srch-head1">Search Wedding Hall <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
+                                    <h6 class="egr-srch-head2">
+                                        <br />
+                                        <%= GetLocalResourceObject("916") %>
+                                    </h6>
+                                </div>
+                                <div class="card-block">
+                                    <form id="WeddingSearchForm" role="form" method="post" data-parsley-validate>
+                                        <div class="row">
+                                            <!--------------- First Row   -------------------->
+                                            <!--------------- First Row   -------------------->
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-side">
+
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 egr-no-pad">
+                                                    <fieldset class="form-group">
+                                                        <label for="formGroupExampleInput"><%= GetLocalResourceObject("906") %></label>
+                                                        <input type="text" class="form-control Destination3" data-code="174" data-level="Country"
+                                                               required data-parsley-required-message="<%= GetLocalResourceObject(" 907")%>"
+                                                        name="Destination3" id="WeddingDestination3" placeholder="<%= GetLocalResourceObject("907") %>" />
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-xs-12 egr-no-pad">
+
+
+                                                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 egr-no-pad">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputAmount"><%= GetLocalResourceObject("927") %></label>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="MaxCapicity" name="MaxCapicity" value="500" placeholder="<%= GetLocalResourceObject(" 927") %>" />
+                                                                <div class='input-group-addon no-radius minus-it' data-field="MaxCapicity"><i class="fa fa-minus"></i></div>
+                                                                <div class='input-group-addon plus-it' data-field="MaxCapicity"><i class="fa fa-plus"></i></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-5" style="padding-top: 2.2em">
+                                                        <button type="submit" id="WeddingSearch" class="btn btn-yellow btn-sm spcl-padding" style="font-size: 1em; padding: 0.4em 1.4em 0.1em;"><span class="fa fa-search button-icon" style="display: inline-block; margin-right: 5px"></span>Search Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 right-side ">
+                                                <h6><%= GetLocalResourceObject("928") %></h6>
+                                                <div class="egr-box margin-top">
+                                                    <table id="SearchByCountry">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><%= GetLocalResourceObject("929") %></td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            @*<%-- ******************************************************************* --%>*@
+                                            <div class="cleafix"></div>
+
+
+                                            <div class="col-xs-12 col-sm-12" style="padding-top: 2em;">
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar col-md-3 col-lg-3 right-side hidden-md-down">
+                <div class="egr-box contact-box">
+                    <h4><%= GetLocalResourceObject("935") %></h4>
+                    <p><%= GetLocalResourceObject("936") %></p>
+                    <address class="contact-details">
+                        <span class="contact-phone"><i class="fa fa-phone"></i><span class="egr-numb">1-800-123</span></span><span class="egr-free"> <%= GetLocalResourceObject("937") %></span>
+                        <br />
+                        <a class="contact-email" href="#">help@reservation.com</a>
+                    </address>
+                </div>
+                <div class="egr-box book-with-us-box">
+                    <h4>Download Our Mobile Apps</h4>
+                    <ul>
+                        <li>
+                            <img src="~/Contentimages/ios-btn.png" />
+                        </li>
+                        <li>
+                            <img src="~/Contentimages/google-play.png" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Footer
 {
-  
+    <script async defer type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBXtwnRFvVhGT-42e__Rnrl2l5SFGrCQOE&callback=initialize"></script>
+    <script src="~/Scripts/WebPages/defaultpage.js"></script>
 
 }

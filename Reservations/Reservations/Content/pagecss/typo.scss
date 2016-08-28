@@ -1,0 +1,1453 @@
+﻿$fontFamily: 'Lato', sans-serif;
+
+/*------ Green color -------*/
+$greencolor: #98CE44;
+$btnhovergreen: #7DB921;
+
+/*------ Blue color -------*/
+$bluecolor: #00B7F1;
+$activebluecolor: #3498db;
+$egrbluecolor: #325C99;
+
+/*------ Yellow color -------*/
+$yellowcolor: #FCB714;
+$btnhoveryellow: #e8a811;
+$borderyellowcolor: #fdb714;
+
+/*------ Grey color -------*/
+$greycolor: #D9D9D9;
+$egrbggrey: #E5EAF2;
+
+/*------ red color -------*/
+$redcolor: #F33C3E;
+$btnhoverred: #ce1315;
+
+/*------ General -------*/
+$border: 3px solid #91c444;
+$width: 100%;
+$box-shadow: 0px 1px 0px rgba(187,187,187,0.22);
+$zero-box-shadow: 0px 0px 0px #bdc3c7;
+
+/*------ Fonts -------*/
+$egrfontblue: #003580;
+$fontsize: 14px;
+$egrfontcolor: #2d3e52;
+
+// new color schemes
+
+$darkblue: #19406f;
+$dark_blue_rgba: rgba(25,64,111,0.8);
+$menu_blue_rgb: rgba(6,45,93,0.8);
+
+$yellow_rgba: linear-gradient(to bottom, #fccb66 0%, #fabb63 100%);
+$hover_yellow_rgba: linear-gradient(to bottom, #fccb66 0%, #f8a532 100%);
+
+
+/*@font-face {
+    font-family: 'Droid Arabic Naskh';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Regular.eot);
+    src: url(//fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Regular.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Droid Arabic Naskh';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Bold.eot);
+    src: url(//fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Bold.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/droidarabicnaskh/v7/DroidNaskh-Bold.ttf) format('truetype');
+}*/
+
+.cal-active {
+    background-color: #e8a811 !important;
+}
+
+.egr-no-pad {
+    padding: 0px;
+}
+
+::selection {
+    background-color: $greencolor;
+    color: #fff;
+}
+
+@mixin transition($target, $speed, $animation) {
+    -webkit-transition: $target, $speed, $animation;
+    -moz-transition: $target, $speed, $animation;
+    -ms-transition: $target, $speed, $animation;
+    -o-transition: $target, $speed, $animation;
+    -transition: $target, $speed, $animation;
+}
+
+@mixin marginLR($left, $right) {
+    margin-left: $left;
+    margin-right: $right;
+}
+
+@mixin bg-blue {
+    color: #fff;
+    background-color: $bluecolor;
+}
+
+@mixin heading_lines() {
+    .egr-heading-1 {
+        float: left;
+        text-align: center;
+        width: 100%;
+        margin-top: -8px;
+
+        h3 {
+            display: block;
+            position: relative;
+            padding: 0 0;
+            text-transform: capitalize;
+            margin-bottom: 0px;
+            color: $yellowcolor;
+        }
+
+        i {
+            color: $yellowcolor;
+        }
+    }
+
+
+    .egr-heading-1 span {
+        display: inline-block;
+        font-size: 40px;
+        position: relative;
+        margin-bottom: 20px;
+        color: #999999;
+        text-align: center;
+    }
+
+    .egr-heading-1 span:before {
+        content: "";
+        left: 59px;
+        right: inherit;
+        bottom: 0px;
+        width: 73px;
+        height: 1px;
+        background-color: #999999;
+        position: absolute;
+        z-index: 2;
+        text-align: center;
+        top: 50%;
+        margin-top: -3px;
+    }
+
+    .egr-heading-1 span:after {
+        content: "";
+        left: inherit;
+        right: 59px;
+        bottom: 0;
+        width: 73px;
+        height: 1px;
+        background-color: #999999;
+        position: absolute;
+        top: 50%;
+        margin-top: -3px;
+    }
+}
+
+@mixin bg-egr-default {
+    color: $egrfontcolor;
+    background-color: #FFF;
+
+    .nav-link {
+        color: $egrfontcolor;
+    }
+}
+
+@mixin bg-green {
+    color: #fff;
+    background-color: $greencolor;
+}
+
+@mixin bg-yellow {
+    color: #fff;
+    background-color: $yellowcolor;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: $fontFamily;
+    font-size: $fontsize;
+    font-style: normal;
+    color: #838383;
+    padding: 0px;
+    height: 100%;
+    line-height: 1.8;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.egr-text-blue {
+    color: $egrfontblue;
+}
+
+@mixin navigation($top,$left,$right) {
+    .flex-direction-nav a:before {
+        font-size: 18px;
+        color: $bluecolor;
+        margin-top: 3px;
+        margin-left: 11px;
+    }
+
+    .flex-direction-nav .flex-next:before {
+        margin-left: 0px;
+        margin-right: 11px;
+    }
+
+    .flex-direction-nav a {
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 1px 3px rgba(0,0,0,0.23);
+        top: $top;
+        right: $right;
+    }
+
+    .flex-direction-nav .flex-prev {
+        left: $left;
+    }
+}
+
+@mixin button($bgcolor, $color,$hovercolor, $shade, $bt-border) {
+    background-color: $bgcolor;
+    font-family: $fontFamily;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color;
+    font-family: $fontFamily;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 0px;
+    //border: $bt-border;
+    border: 3px #fff solid;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.52);
+    @include transition(all, 0.3s, ease);
+
+    i {
+        margin-right: 4px;
+    }
+
+    &:hover, &:active, &:focus {
+        background-image: none;
+        background-color: $hovercolor;
+
+        i {
+            color: #fff;
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.3;
+    margin: 0 0 15px;
+    color: $egrfontcolor;
+    font-family: $fontFamily;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+}
+
+section {
+    height: auto;
+}
+
+p, a {
+    font-weight: normal;
+    font-family: $fontFamily;
+    font-size: $fontsize;
+    color: #838383;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: $egrfontcolor;
+
+    &:hover, &:focus, &:active, &:visited {
+        text-decoration: none;
+        outline: none;
+        //        background-color: transparent !important;
+    }
+}
+
+.btn-primary {
+    margin-bottom: 10px;
+    background-color: $bluecolor !important;
+    border: 3px #fff solid;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.52);
+    border-radius: 3px;
+    font-family: $fontFamily;
+    font-weight: bold;
+
+    &:hover, &:active, &:focus {
+        background-color: $egrfontblue !important;
+        border-color: #FFF !important;
+    }
+}
+
+.btn-green {
+    @include button($greencolor, #FFF, #217c17, 1px, 0px solid none);
+    background-image: -webkit-gradient( linear, right bottom, right top, color-stop(0, #99CE44), color-stop(1, #89BF38) );
+    background-image: -o-linear-gradient(top, #99CE44 0%, #89BF38 100%);
+    background-image: -moz-linear-gradient(top, #99CE44 0%, #89BF38 100%);
+    background-image: -webkit-linear-gradient(top, #99CE44 0%, #89BF38 100%);
+    background-image: -ms-linear-gradient(top, #99CE44 0%, #89BF38 100%);
+    background-image: linear-gradient(to top, #99CE44 0%, #89BF38 100%);
+    border-radius: 3px;
+    border: 3px #fff solid;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.52);
+}
+
+.btn-yellow {
+    background-image: $yellow_rgba;
+    border-radius: 3px;
+    color: $egrfontblue;
+
+    &:hover, &:active, &:focus {
+        background-image: $hover_yellow_rgba;
+    }
+}
+
+.btn-grey {
+    color: $egrfontcolor;
+    @include button($greycolor, #444, $greencolor, 0px, 0px solid none);
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #D9D9D9), color-stop(1, #EDEDED) );
+    background-image: -o-linear-gradient(bottom, #D9D9D9 0%, #EDEDED 100%);
+    background-image: -moz-linear-gradient(bottom, #D9D9D9 0%, #EDEDED 100%);
+    background-image: -webkit-linear-gradient(bottom, #D9D9D9 0%, #EDEDED 100%);
+    background-image: -ms-linear-gradient(bottom, #D9D9D9 0%, #EDEDED 100%);
+    background-image: linear-gradient(to bottom, #D9D9D9 0%, #EDEDED 100%);
+    border-radius: 3px;
+}
+
+.btn {
+    padding: 8px 25px;
+
+    i {
+        margin-right: 4px;
+    }
+}
+
+form label {
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 1rem;
+    font-family: $fontFamily;
+}
+
+.input-group .form-control, .form-control, .form-group .form-control {
+    width: 100%;
+    height: 39px;
+    padding: 5px 6px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $egrfontblue;
+    background: #fff;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+
+    &:active {
+        border: 1px solid $bluecolor;
+    }
+
+    &:focus {
+        border: 1px solid $bluecolor;
+    }
+
+    &:hover {
+        border-color: $bluecolor;
+        outline: 0;
+    }
+}
+
+select.form-control option {
+    padding: 2px 15px;
+    /*border: 1px solid #D1DCD8;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);*/
+}
+
+/*----------------------------------------------------------
+    ----------------- textbox, button animation+style -----------
+    --------------------------------------------------------
+*/
+
+.form-group, .input-group {
+    margin-bottom: 15px;
+}
+
+.input-group-addon {
+    border-radius: 0px;
+    padding: .375rem 1.05rem;
+    color: $redcolor;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-left: 0px solid transparent;
+    border-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    i {
+        color: #333;
+    }
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: .3em 0 1em 0;
+    width: 100%;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid green;
+    cursor: pointer;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+.button:focus {
+    outline: 0;
+}
+
+.checkbox {
+    display: inline;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #4a89dc;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+
+/* active */
+
+.form-control:focus ~ .bar:before, .form-control:focus ~ .bar:after {
+    width: 50%;
+}
+
+
+/* Highlight */
+
+.highlight {
+    position: absolute;
+    height: 55%;
+    width: 100px;
+    top: 0%;
+    left: 10%;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+/* active */
+
+.form-control:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #4a89dc;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #4a89dc;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+
+
+/* Button modifiers */
+.buttonRed {
+    background-color: $redcolor;
+    text-shadow: 1px 1px 0 rgba(125, 185, 33, .5);
+    border-bottom: 2px solid red;
+}
+
+.buttonRed:hover {
+    background-color: $redcolor - 100;
+    color: #FFF;
+}
+
+.buttonBlue {
+    background-color: $btnhovergreen;
+    text-shadow: 1px 1px 0 rgba(125, 185, 33, .5);
+}
+
+.buttonBlue:hover {
+    background-color: $greencolor;
+    color: #FFF;
+}
+
+
+/* Ripples container */
+
+.ripples {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+}
+
+
+/* Ripples circle */
+
+.ripplesCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+    -webkit-animation: ripples .4s ease-in;
+    animation: ripples .4s ease-in;
+}
+
+
+/*----------- Hotel Icon ---------------*/
+.soap-icon-hotel:before {
+    content: '\e839';
+}
+
+[class^="soap-icon"]:before, [class*=" soap-icon"]:before {
+    font-family: "soap-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+}
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'soap-icons';
+    src: url("../../fonts/soap-icons.eot?26664784#iefix") format("embedded-opentype"), url("../../fonts/soap-icons.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="soap-icon"],
+[class*=" soap-icon"] {
+    vertical-align: baseline;
+}
+
+[class^="soap-icon"]:before,
+[class*=" soap-icon"]:before {
+    font-family: "soap-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+}
+
+/*------------- Jquery-ui DatePicker ---------------*/
+
+.datepicker-wrap:after {
+    background: none;
+    color: $borderyellowcolor;
+}
+
+.ui-datepicker-trigger {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 1;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
+.datepicker-wrap:after {
+    display: block;
+    font-family: "soap-icons";
+    content: "\e86a";
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    height: 100%;
+    text-align: center;
+    line-height: 34px;
+    background: green;
+}
+
+.datepicker-wrap.yellow:after {
+    background: $borderyellowcolor;
+}
+
+.datepicker-wrap.transparent:after {
+    background-color: transparent;
+    color: $borderyellowcolor;
+}
+
+.ui-datepicker {
+    width: 20em;
+    padding: 0;
+    display: none;
+    background: #fff;
+    border: 1px solid $borderyellowcolor;
+    z-index: 101 !important;
+    border-radius: 1px;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: 0;
+    background: none !important;
+    border-radius: 0px;
+    border: 0px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 0px;
+    font-size: 12px;
+    background: none;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 11px;
+    cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-prev.ui-state-disabled,
+.ui-datepicker .ui-datepicker-next.ui-state-disabled {
+    visibility: hidden;
+}
+
+.ui-datepicker .ui-datepicker-prev:before,
+.ui-datepicker .ui-datepicker-next:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+.ui-datepicker .ui-datepicker-group {
+    width: 50%;
+    display: -moz-box;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.ui-datepicker .ui-datepicker-prev:before {
+    border-right: 8px solid #fff;
+}
+
+.ui-datepicker .ui-datepicker-next:before {
+    border-left: 8px solid #fff;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+    display: none;
+}
+
+.ui-datepicker th {
+    padding: 0px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    margin: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+    font-size: 1em;
+    margin: 1px 0;
+}
+
+.ui-datepicker select.ui-datepicker-month-year {
+    width: 100%;
+}
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+    width: 49%;
+}
+
+.ui-datepicker-year {
+    color: $egrbluecolor;
+}
+
+
+.head-cal {
+    text-align: center !important;
+    background-color: #E6EDF6;
+    color: $egrbluecolor;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0.4em 1em;
+    border: 1px solid $bluecolor;
+    border-bottom: 0px solid;
+}
+
+.head-cal:before {
+    position: absolute;
+    content: "";
+    top: -9px;
+    left: 1%;
+    border-left: 6px solid transparent;
+    border-bottom: 9px solid #E5EAF2;
+    border-right: 6px solid transparent;
+    z-index: 9999;
+}
+
+.head-cal:after {
+    position: absolute;
+    content: "";
+    top: -10px;
+    left: 0.8%;
+    border-left: 7px solid transparent;
+    border-bottom: 10px solid #00B7F1;
+    border-right: 7px solid transparent;
+    z-index: 9998;
+}
+
+.ui-datepicker table {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+.ui-datepicker th {
+    width: 30px;
+    height: 22px;
+    line-height: 20px;
+}
+
+.ui-datepicker th span {
+    display: block;
+    text-align: center;
+    font-size: 1.1667em;
+    font-weight: normal;
+    color: #AEAEAE;
+}
+
+.ui-datepicker span.ui-datepicker-month {
+    font-weight: bold;
+    color: $egrfontcolor;
+}
+
+.ui-datepicker .ui-datepicker-calendar td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.ui-datepicker .ui-datepicker-calendar td a,
+.ui-datepicker .ui-datepicker-calendar td span {
+    color: inherit;
+    display: block;
+    height: 22px;
+    line-height: 20px;
+    padding: 2px 5px;
+    text-align: center;
+    color: $bluecolor;
+}
+
+.ui-datepicker .ui-datepicker-calendar tr td:nth-child(1) a {
+    color: #1F3580;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-state-disabled span {
+    color: #bdbdbd;
+    position: relative;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-state-disabled span:before {
+    position: absolute;
+    content: "";
+    top: 12px;
+    left: 10px;
+    width: 10px;
+    height: 1px;
+    background: #bdbdbd;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day a,
+.ui-datepicker .ui-datepicker-calendar td a:hover {
+    background: $yellowcolor;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a {
+    position: relative;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a:before {
+    content: "";
+    border-right: 5px solid $activebluecolor;
+    border-top: 5px solid transparent;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+
+.ui-datepicker {
+    border: 1px solid $bluecolor;
+    box-shadow: 0px -20px 20px rgba(0,0,0,0.23);
+}
+
+.ui-datepicker.yellow .ui-datepicker-header {
+    background: none;
+    color: $egrfontcolor;
+}
+
+.ui-datepicker.yellow th span {
+    color: $borderyellowcolor;
+}
+
+.ui-datepicker.yellow .ui-datepicker-calendar td.ui-datepicker-current-day a,
+.ui-datepicker.yellow .ui-datepicker-calendar td a:hover {
+    background: $bluecolor;
+}
+
+.ui-datepicker.yellow .ui-datepicker-calendar td.ui-datepicker-today a:before {
+    border-right-color: $activebluecolor;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+    border: 0px;
+    background: none;
+    font-weight: none;
+    color: none;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    width: 1.6em;
+    height: 1.6em;
+    right: 12px;
+    top: 7px;
+    border-radius: 50%;
+    background-color: #3498db !important;
+
+    &:hover, &:active, &:focus {
+        background-image: none !important;
+        background-color: $yellowcolor !important;
+
+        .ui-datepicker .ui-datepicker-prev::before, .ui-datepicker .ui-datepicker-next::before {
+            background-image: none !important;
+            border-left-color: #FCB714 !important;
+        }
+
+        .ui-datepicker .ui-datepicker-prev::after, .ui-datepicker .ui-datepicker-next::after {
+            background-image: url(../images/cal-navi.png);
+            background-image: none !important;
+            border: 1px solid #FCB714 !important;
+        }
+    }
+}
+
+
+.ui-datepicker .ui-datepicker-prev {
+    left: 10px;
+    top: 2px;
+}
+
+.ui-datepicker .ui-datepicker-prev::before, .ui-datepicker .ui-datepicker-next::before {
+    position: absolute;
+    top: 6px;
+    left: 0.63em;
+}
+
+.ui-datepicker .ui-datepicker-prev::before {
+    left: 0.46em;
+}
+
+.ui-datepicker .ui-datepicker-prev::after, .ui-datepicker .ui-datepicker-next::after {
+    position: absolute;
+    content: "";
+    width: 1.3em;
+    height: 1.3em;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+}
+
+.ui-datepicker .ui-datepicker-group-last {
+    border-right: 0px solid none !important;
+}
+
+.ui-datepicker .ui-datepicker-group-first {
+    border-right: 1px solid #bbb !important;
+}
+
+.yellow {
+    color: $yellowcolor;
+}
+
+.blue {
+    color: $bluecolor;
+}
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label:before {
+    margin: 1px;
+    font-size: 0.95em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+    color: $bluecolor;
+    float: right;
+    margin: 0px;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+    color: $yellowcolor;
+}
+/* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+    color: $btnhoveryellow;
+}
+
+.radio {
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 0px;
+    line-height: 2.2em;
+    width: 100%;
+}
+
+.radio:hover .inner {
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: .5;
+}
+
+.radio input {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.radio input:checked + .outer .inner {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio input:checked + .outer {
+    border: 3px solid $btnhoveryellow;
+}
+
+.radio input:focus + .outer .inner {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    background-color: $btnhoveryellow;
+}
+
+.radio .outer {
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    border: 2px solid $activebluecolor;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-top: 0.5em;
+}
+
+.radio .inner {
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    width: 6px;
+    height: 6px;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    display: block;
+    margin: 2px;
+    border-radius: 50%;
+    background-color: $btnhoveryellow;
+    opacity: 0;
+}
+
+#map_g {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 544px) {
+    .modal-sm {
+        width: 380px;
+    }
+}
+
+/*----------------- CheckBoxes -------------------*/
+
+.lable-checkbox {
+    display: block;
+    position: relative;
+    padding: 0.3rem 0rem;
+    line-height: 15px;
+    font-weight: normal;
+    cursor: pointer;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lable-checkbox i {
+    display: inline;
+    height: 25px;
+    position: relative;
+    top: 6px;
+    font-style: normal;
+    color: $yellowcolor;
+}
+
+.lable-checkbox span {
+    display: inline;
+    margin-left: 5px;
+    vertical-align: sub;
+    font-size: 14px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.label-checkbox .pull-right {
+    margin-top: 3px;
+}
+
+/*input[type="checkbox"] {
+    display: none;
+}*/
+
+input[type="checkbox"] + i:before {
+    font-family: 'FontAwesome';
+    font-size: 22px;
+    height: 10px;
+    width: 10px;
+    display: inline;
+}
+
+input[type="checkbox"]:checked + i {
+    position: relative;
+}
+
+/*input[type="checkbox"]:checked + i + span {
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+}*/
+
+input[type="checkbox"] + i:before {
+    content: "\f096";
+}
+
+input[type="checkbox"]:checked + i:before {
+    content: "\f046";
+}
+
+input[type="checkbox"]:checked + i + span,
+input[type="checkbox"]:checked + i:before {
+    color: $btnhovergreen;
+}
+
+.circle, [class*=" soap-icon"].circle, .glyphicon.circle {
+    border: 1px solid;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.7333em;
+    -webkit-border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -ms-border-radius: 50% 50% 50% 50%;
+    border-radius: 50% 50% 50% 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.egr-tooltip {
+    position: relative;
+}
+
+.egr-tooltip .tooltip-span {
+    display: none;
+}
+
+.egr-tooltip:hover .tooltip-span {
+    display: block;
+    position: fixed;
+    /*overflow: hidden;*/
+    padding: 1.5em;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 3px;
+    width: auto;
+    height: auto;
+    z-index: 9999;
+}
+
+.tooltip-span img {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.swal2-container {
+    z-index: 9999;
+}
+
+.swal2-overlay {
+    z-index: 9998;
+}
+
+.swal2-modal {
+    z-index: 9999;
+}
+
+.ui-autocomplete {
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.22);
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 20px;
+    min-height: 100px;
+    height: 350px;
+    overflow-y: auto;
+    background-image: none;
+}
+
+.ui-menu .ui-menu-item {
+    background-color: #FFF;
+    color: $egrfontblue;
+    padding: 5px 5px;
+    font-size: 14px;
+    border-bottom: 0px solid transparent !important;
+
+    &:hover, &:active, &:focus {
+        background-color: #FBFBFB;
+        text-decoration: underline;
+    }
+}
+
+.ui-menu .ui-state-focus, .ui-menu .ui-state-active {
+    margin: 0px !important;
+}
+
+/*____________________________________________________________________________
+    _______________________________________________________________________
+    ________________________________________________________________________________
+     
+    ARABIC Typo
+
+    ________________________________________________________________________________
+    ____________________________________________________________________________________
+    ________________________________________________________________________________
+
+*/
+body[dir=rtl] {
+    h1, h2, h3, h4, h5, h6, lable, p, address, a, input, label, .table, button, #egr-loc-1, #egr-hotel-re .egr-hotel-re-txt p, .card-header, .egr-filter-fav .card-block .nav-item, .lable-checkbox i, .lable-checkbox, .egr-hotel-facilities a, .alert, .table {
+        direction: rtl;
+        text-align: right;
+        font-family: 'Droid Arabic Naskh' !important;
+    }
+
+    select {
+        padding-left: 0px !important;
+        padding-right: 2.5em !important;
+    }
+
+    input[type="number"] {
+        padding-right: 1em !important;
+    }
+
+    #footer .nav.nav-inline .nav-item {
+        float: right;
+    }
+
+    .breadcrumb {
+        text-align: right;
+    }
+
+    #footer .nav.nav-inline .nav-link {
+        font-size: 1.1em;
+    }
+
+    .left-sidebar, .breadcrumb > li + li::before, .breadcrumb > li {
+        float: right;
+        text-align: right;
+    }
+
+    .right-sidebar {
+        float: left;
+    }
+
+    .egr-nav-first {
+        .navbar-brand {
+            float: right !important;
+        }
+
+        ul.nav {
+            float: left !important;
+        }
+    }
+
+    .sticky-header ul {
+        width: 67% !important;
+    }
+
+    .navbar-nav .nav-item, .search-tab li, .left-side, .egr-feature, .egr-service, .egr-service > div[class^='col-'], .price-table, .egr-language-list > div[class^='col-'], .egr-lang-pad > div[class^='col-'], footer .row > div[class^='col-'], label, .confirmation-details i, .clr-text-a {
+        float: right;
+    }
+
+    .pull-xs-right, .pull-right, .egr-nav-second ul.nav, .online-payment li, .rtl-float-left, .right-side {
+        float: left !important;
+    }
+
+    .egr-section-head h3, .search-tab .nav-link, .egr-section-head p, button, .btn, .form-headding, .heading, .egr-clsy-box p {
+        text-align: center;
+    }
+
+    .egr-navbar-second, .text-xs-right {
+        text-align: left !important;
+    }
+
+    .group label {
+        left: auto;
+        right: 15px;
+    }
+
+    .head-cal:before {
+        left: auto;
+        right: 9%;
+    }
+
+    .head-cal:after {
+        left: auto;
+        right: 8.8%;
+    }
+
+    .flexslider, .price-table .price, .ui-autocomplete {
+        direction: ltr;
+    }
+
+    .egr-msrch-bg .card-block form label {
+        font-size: 1em;
+        color: #444;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .egr-search-card {
+        .egr-search-icon {
+            right: 10px;
+        }
+
+        input[type="text"] {
+            padding-left: 0px !important;
+            padding-right: 1em !important;
+        }
+
+        .egr-srch-head2, .egr-srch-head1 {
+            padding-right: 20px;
+            margin-left: 10px !important;
+        }
+
+        .input-group-addon {
+            border-top-right-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            border-top-left-radius: 5px !important;
+            border-bottom-left-radius: 5px !important;
+            border-left: 1px solid #D1DCDE !important;
+            border-right: unset !important;
+        }
+
+        .input-group input {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .egr-subs h6 {
+            padding-right: 3px;
+        }
+
+        .egr-sign-section .btn {
+            left: 5px;
+            right: auto;
+            top: 7.45%;
+        }
+
+        .egr-toggle-signup {
+            left: 10px;
+            right: auto;
+        }
+    }
+
+    .egr-h-det .half {
+        display: none;
+    }
+
+    .row1 .confirmation-details .fa-check-circle {
+        margin-top: 6px;
+        margin-right: 0px;
+        margin-left: 5px;
+    }
+
+    .swal2-modal h2 {
+        text-align: center !important;
+    }
+}
+
+.in-range {
+    background-color: $bluecolor;
+
+    a {
+        color: #fff !important;
+    }
+}

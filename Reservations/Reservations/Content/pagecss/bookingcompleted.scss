@@ -1,0 +1,231 @@
+﻿/*------------ 1 Typography --------------------*/
+@import "stylehf.scss";
+
+.bk-cmp-cnt-wrapper {
+    background-color: #F2F4F6;
+    padding: 4em 0em;
+}
+
+.row1 {
+    padding-bottom: 2em;
+
+    .col1 h2 {
+        color: $egrfontblue;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .confirmation-details {
+        padding-left: 15px;
+
+        .fa-check-circle {
+            display: inline;
+            color: $greencolor;
+            font-size: 1.1em;
+            margin-right: 10px;
+        }
+
+        p {
+            color: $egrfontblue;
+            font-size: 1.4em;
+            line-height: 1.7em;
+
+            .btn {
+                background-color: #FFF;
+                padding: 3px 5px;
+                box-shadow: 0px -1px 1px rgba(0,0,0,0.22);
+                font-size: 12px;
+                border: 1px solid $egrbggrey;
+                color: $bluecolor;
+
+                i {
+                    color: $btnhoveryellow;
+                }
+
+                &:hover, &:active, &:focus {
+                    background-color: $egrbggrey;
+                }
+            }
+
+            a {
+                font-size: 0.9em;
+                color: $bluecolor;
+                text-decoration: underline;
+
+                &:hover, &:active, &:focus {
+                    color: $activebluecolor;
+                }
+            }
+        }
+
+        .clear-text {
+            font-size: 1em;
+        }
+    }
+
+    .col2 .btn {
+        margin-bottom: 1.1em;
+
+        i {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .fa-mobile {
+            font-size: 1.7em;
+            vertical-align: sub;
+        }
+    }
+}
+
+.row2 {
+    h3 {
+        color: $egrfontblue;
+        font-weight: bold;
+        padding-left: 15px;
+        font-size: 1.6em;
+        text-transform: capitalize;
+    }
+
+    .col1 {
+        background-color: #FFF;
+        min-height: 319px;
+        box-shadow: -1px 0px 2px rgba(0,0,0,0.12);
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        padding: 1em;
+    }
+
+    .clr-text-a {
+        display: inline;
+        color: $bluecolor;
+        font-size: 1.4em;
+        text-decoration: underline;
+        float: left;
+    }
+
+    .rate-div {
+        display: inline-block;
+        vertical-align: text-top;
+        padding-left: 10px;
+        padding-top: 3px;
+        min-height: 40px;
+
+        .fa-thumbs-o-up {
+            margin-left: 5px;
+            font-size: 1.4em;
+            font-style: italic;
+            color: $yellowcolor;
+        }
+    }
+
+    .bk-det-head {
+        color: $egrfontblue;
+        width: 200px;
+        font-size: 1.1em;
+        display: inline-block;
+    }
+
+    .bk-det-desc {
+        color: $egrfontblue;
+        font-size: 1.1em;
+        font-weight: normal;
+    }
+
+    .col1-c2 {
+        margin-top: 3em;
+        border-top: 1px dotted $greencolor;
+
+        .bk-det-head {
+            font-size: 1.6em;
+        }
+
+        .bk-det-desc {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
+
+    .col2 {
+        min-height: 310px;
+        background-color: $egrbggrey;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        box-shadow: 1px 0px 2px rgba(0,0,0,0.12);
+        padding: 1em 1.5em;
+
+        h4 {
+            color: $egrfontblue;
+            margin-bottom: 10px;
+        }
+
+        .fst-p {
+            font-size: 16px;
+            color: $egrfontcolor;
+            margin-bottom: .5em;
+        }
+
+        a {
+            color: $bluecolor;
+            text-decoration: underline;
+            font-size: 1.2em;
+            font-weight: bold;
+
+            &:hover, &:active, &:focus {
+                color: $activebluecolor;
+            }
+        }
+
+        .nav-block i {
+            color: $egrfontcolor;
+            font-size: 1.3em;
+            width: 25px;
+        }
+
+        .btn {
+            margin-top: 5px;
+            display: block;
+            width: 100%;
+        }
+
+        small {
+            margin-top: 7px;
+            display: block;
+            line-height: 18px;
+        }
+    }
+}
+
+.heading, .detail {
+    font-size: 1.2em;
+}
+
+.card-block {
+    padding-bottom: 0px;
+}
+
+i {
+    margin-right: 4px;
+}
+
+.card-header p {
+    color: #003580;
+}
+
+.heading {
+    color: #003580;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.detail {
+    color: #333;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.half{
+    display:none;
+}

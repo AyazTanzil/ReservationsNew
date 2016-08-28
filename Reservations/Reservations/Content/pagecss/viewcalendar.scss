@@ -1,0 +1,699 @@
+﻿
+/*------------ 1 Typography --------------------*/
+@import "stylehf.scss";
+
+.breadcrumb {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0px;
+    background-color: transparent;
+
+    li a {
+        font-weight: bold;
+    }
+
+    .active a {
+        color: $yellowcolor;
+    }
+}
+
+.start-range, .ui-state-active {
+    background-color: $egrfontblue !important;
+    border-radius: 0px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+    a {
+        color: #fff !important;
+        background-color: unset !important;
+    }
+}
+
+.start-range .ui-state-default {
+    color: #fff !important;
+}
+
+.end-range {
+    background-color: $egrfontblue !important;
+    border-radius: 0px !important;
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+
+    a {
+        color: #fff !important;
+        background-color: unset !important;
+    }
+}
+
+.hover-range {
+    background-color: $activebluecolor !important;
+
+    a {
+        color: #fff !important;
+        background-color: unset !important;
+    }
+}
+
+.in-range {
+    background-color: $bluecolor !important;
+
+    a {
+        color: #fff !important;
+        background-color: unset !important;
+    }
+}
+
+.ui-priority-secondary {
+    background-color: #fff !important;
+    color: $bluecolor !important;
+    opacity: 0.4 !important;
+}
+
+.calendar-wrapper {
+    padding: 1em 0em;
+}
+
+.ui-datepicker .ui-datepicker-group {
+    width: 33% !important;
+}
+
+.ui-datepicker.ui-datepicker-multi {
+    width: 51.7em !important;
+    padding-left: 10px;
+}
+
+.ui-datepicker {
+    box-shadow: unset;
+    border: unset;
+}
+
+.calendar-container {
+    border: 1px solid $bluecolor;
+    background-color: rgba(241, 249, 249,0.8);
+}
+
+.ui-datepicker .ui-datepicker-group-middle {
+    border-right: 1px solid #bbb !important;
+}
+
+.ui-datepicker .ui-datepicker-group-first, .ui-datepicker .ui-datepicker-group-middle, .ui-datepicker .ui-datepicker-group-last {
+    .ui-datepicker-title {
+        border: 1px solid $btnhoveryellow;
+    }
+}
+
+.ui-datepicker .ui-datepicker-group-first {
+    .ui-datepicker-title {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+.ui-datepicker .ui-datepicker-group-last .ui-datepicker-title {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ui-datepicker th {
+    height: 35px;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    display: none;
+}
+
+.ui-datepicker-title {
+    background-color: #FCB714;
+    line-height: 2.5em !important;
+    margin: 0px !important;
+}
+
+.drag-active {
+    background-color: red;
+}
+
+.ui-datepicker-month, .ui-datepicker-year {
+    color: #fff !important;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day a, .ui-datepicker .ui-datepicker-calendar td a:hover {
+    background-color: $greencolor;
+}
+
+.heading {
+    color: #fff;
+    margin-bottom: 0px;
+    padding: 0.3em 0.5em;
+    font-size: 1.4em;
+    font-weight: bold;
+    background-color: $bluecolor;
+
+    .fa {
+        margin-right: 3px;
+    }
+}
+
+.fancybox-overlay.fancybox-overlay-fixed {
+    z-index: 9999;
+}
+
+
+.left-sidebar {
+
+    .egr-fil-re li {
+        overflow: hidden;
+    }
+
+    .egr-fil-re {
+        .card-block {
+            background-color: #F9f9f9;
+        }
+    }
+
+    .egr-hotel-re-txt {
+        p {
+            width: 100%;
+            min-height: 25px;
+            color: #666;
+            font-size: 13px;
+            line-height: 16px;
+            text-align: left;
+            padding: 0.3em 0.5em;
+            margin: 0px;
+            letter-spacing: 0.05em;
+        }
+
+        P:before {
+            position: absolute;
+            content: "\f0d7";
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            bottom: -11px;
+            color: $egrbggrey;
+            left: 10px;
+            z-index: 9999;
+            font-size: 18px;
+        }
+    }
+
+    .egr-hotel-re-who {
+        width: 100%;
+        min-height: 25px;
+        background-color: #f9f9f9;
+        text-align: left;
+
+        img {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+        }
+
+        .user-r {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        p {
+            margin: 0px;
+            padding: 0.2em 0.5em;
+        }
+
+        span {
+            font-size: 12px;
+            display: inline;
+        }
+
+        span:nth-child(1) {
+            color: $egrbluecolor;
+            padding-right: 6px;
+            font-weight: 400;
+        }
+
+        span:nth-child(2) {
+            color: #080808;
+            font-size: 11px;
+        }
+    }
+
+
+    .fa {
+        margin-right: 2px;
+    }
+
+    .egr-ap-det-thumbs {
+        margin-bottom: 15px;
+
+        li {
+            display: inline;
+            cursor: pointer;
+        }
+
+        li img {
+            margin-bottom: 2px;
+            /*margin-left: -2px;*/
+            &:hover, &:active {
+                -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+                filter: grayscale(100%);
+            }
+        }
+
+        .tooltip-span img {
+            width: 500px;
+            height: 300px;
+        }
+    }
+
+    .egr-l-r1 {
+        ul {
+            padding-bottom: 1em;
+            border-bottom: 1px solid #D1DCD8;
+        }
+
+        li {
+            color: #339900;
+            line-height: 1.6em;
+        }
+
+        li:first-child {
+            font-weight: bold;
+        }
+    }
+
+    .egr-l-r1-pl {
+        margin-bottom: 0.5em;
+        min-height: 60px;
+        background-color: $egrbggrey;
+        box-shadow: 0px 0px 1px rgba(0,0,0,0.12);
+        border-radius: 2px;
+
+        h4 {
+            color: $egrfontblue;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+
+        .price {
+            font-style: italic;
+            text-align: right;
+            font-size: 1.4em;
+
+            small {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .egr-filter-det {
+        border: 1px solid #D1DCF0;
+        box-shadow: none;
+
+        .card-header {
+            font-weight: bold;
+            font-size: 1.2em;
+            background-color: $egrbggrey;
+            color: $egrfontblue;
+            padding: .45rem 1.25rem;
+        }
+
+        .card-block {
+            padding: 0.65rem;
+        }
+
+        .egr-h-img img {
+            width: 92%;
+            height: 55px;
+            border-radius: 3px;
+        }
+
+        .egr-h-det {
+            padding: 0px;
+            padding-left: 5px;
+            line-height: 10px;
+            display: inline-block;
+
+            h5 {
+                color: $activebluecolor;
+                font-size: 1em;
+                font-weight: normal;
+                margin-bottom: 7px;
+            }
+
+            p {
+                color: $activebluecolor;
+
+                small {
+                    color: #999;
+                }
+            }
+
+            .rating {
+                position: absolute;
+                top: 20px;
+            }
+        }
+
+        .nav-item {
+            position: relative;
+            min-height: 75px;
+            padding-top: 10px;
+            border-bottom: 1px dotted #D1DCF0;
+        }
+
+        .remove-link {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: $greycolor;
+            cursor: pointer;
+
+            &:hover, &:focus, &:active {
+                color: $yellowcolor;
+            }
+        }
+    }
+}
+
+.right-sidebar {
+
+    .nav-inline {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+        text-align: center;
+
+        li {
+            display: inline;
+        }
+
+        li + li {
+            margin-left: 0.5em;
+        }
+    }
+
+    .color-booked, .color-avail, .color-current {
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+        border-radius: 3px;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    .color-booked {
+        background-color: #e50019;
+    }
+
+    .color-current {
+        background-color: $greencolor;
+    }
+
+    .color-avail {
+        background-color: #fff;
+        border: 1px solid #bbb;
+    }
+
+    .color-desc {
+        display: inline-block;
+        color: $egrfontblue;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .egr-hotel-n-det {
+        margin-bottom: 1em;
+
+        h3 {
+            color: $egrfontblue;
+            display: inline;
+            font-size: 1.6em;
+            font-weight: bold;
+            line-height: 10px;
+            margin-bottom: 0px;
+            padding-left: 5px;
+        }
+
+        .fa-thumbs-o-up {
+            font-size: 1.4em;
+            font-style: italic;
+        }
+
+        address {
+            padding-left: 5px;
+            color: $egrfontblue;
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 0px;
+
+            i {
+                font-size: 1.2em;
+                margin-right: 3px;
+                text-shadow: 1px 3px 1px rgba(0,0,0,0.22);
+            }
+
+            a {
+                font-weight: bold;
+                font-size: 14px;
+                color: $bluecolor;
+
+                &:hover, &:active, &:focus {
+                    text-decoration: underline;
+                    color: $yellowcolor;
+                }
+            }
+        }
+    }
+
+    .egr-hotel-n-btns {
+
+        .btn-re {
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 1.2em;
+            margin-left: 5px;
+
+            i {
+                vertical-align: inherit;
+                margin: 0px;
+            }
+        }
+    }
+
+    .egr-deals {
+        padding-top: 2em;
+
+        .egr-deal-head {
+            h4 {
+                color: $egrfontblue;
+                font-weight: bold;
+                font-size: 2em;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+
+            p {
+                color: $egrfontblue;
+                text-align: center;
+            }
+        }
+
+        .btn {
+            padding: 6px 15px;
+        }
+
+        img {
+            width: 100%;
+            height: 165px;
+        }
+
+        .card {
+            border: 1px solid #D1DCD8;
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.22);
+            cursor: default;
+
+            &:hover {
+                box-shadow: 0px 1px 10px rgba(0,0,0,0.52);
+            }
+
+            h4 {
+                color: $egrfontblue;
+                font-size: 1.2em;
+                font-weight: bold;
+                margin-bottom: 2px;
+            }
+
+            .how-stars, .price-row {
+                width: 100%;
+                position: relative;
+                text-align: center;
+                padding-bottom: 5px;
+            }
+
+            .price-row {
+                line-height: 25px;
+                margin-bottom: 10px;
+
+                .currency, .price {
+                    font-size: 1.6em;
+                    color: $egrfontblue;
+                }
+
+                strong {
+                    color: $egrfontblue;
+                }
+            }
+        }
+
+        .card-block {
+            padding: 0.5rem;
+            background-color: $egrbggrey;
+            overflow: hidden;
+        }
+    }
+}
+
+.close-full-map {
+    position: absolute;
+    background-color: $bluecolor;
+    display: block;
+    width: 25px;
+    height: 25px;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    border: 2px groove #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.22);
+
+    &:hover, &:active, &:focus {
+        background-color: $yellowcolor;
+    }
+
+    i {
+        vertical-align: super;
+    }
+}
+
+.full-map-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none;
+
+    .modal-map-c {
+        width: 75%;
+        height: 525px;
+        background-color: #fff;
+        position: relative;
+        border-radius: 10px;
+        margin: 6.35% auto;
+        border: 2px solid #fff;
+    }
+
+    #full-map {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .close-full-map {
+        z-index: 9999;
+        right: 0px;
+        margin-right: -10px;
+        margin-top: -10px;
+    }
+}
+
+.banner {
+    position: absolute;
+    top: 12px;
+    right: -13px;
+    width: 100px;
+    height: 30px;
+    z-index: 1;
+    background-color: $yellowcolor;
+    box-shadow: -3px 1px 7px rgba(0, 0, 0, 0.68);
+    z-index: 99;
+
+    .b-percent {
+        color: #fff;
+        width: 100%;
+        font-size: 1em;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+.banner:before {
+    position: absolute;
+    content: "";
+    right: -1px;
+    top: 30px;
+    border-bottom: 0px solid transparent;
+    border-top: 12px solid transparent;
+    border-right: 14px solid #bd890f;
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-183deg);
+}
+
+.swal2-content {
+    width: 100%;
+    margin: 0px auto;
+    padding: 1em 0px 0.2em;
+    background-color: $egrbggrey;
+
+    span {
+        display: inline-block;
+    }
+
+    p:last-child {
+        margin-top:10px;
+        color:$egrfontblue;
+        .btn {
+            background-color: #FFF;
+            padding: 3px 5px;
+            box-shadow: 0px -1px 1px rgba(0,0,0,0.22);
+            font-size: 12px;
+            border: 1px solid $egrbggrey;
+            color: $bluecolor;
+
+            i {
+                color: $btnhoveryellow;
+            }
+
+            &:hover, &:active, &:focus {
+                background-color: $egrbggrey;
+            }
+        }
+    }
+}
+
+.swal2-modal{
+    padding: 20px 5px;
+}
+
+.det-head, .det-desc {
+    width: 120px;
+    color: $egrfontblue;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.det-desc {
+    width: 210px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.edit-details{
+    margin-top:5px;
+}

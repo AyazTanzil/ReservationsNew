@@ -1,0 +1,29 @@
+﻿@import "stylehf.scss";
+
+.egr-nav-first {
+    background-color: #FFF;
+    border-bottom: 1px solid #e7e7e7;
+    min-height: 40px;
+    box-shadow: 4px 0px 1px rgba(0,0,0,0.1);
+
+    .navbar-nav .nav-item {
+        .nav-link {
+            color: #777;
+            font-size: 13px;
+        }
+    }
+
+    ul {
+        margin: 0px;
+    }
+}
+
+.egr-nav-second {
+    background-color: $darkblue;
+    box-shadow: none;
+}
+
+.egr-site-content-wrapper {
+    padding-top: 10em;
+    background-color: #F4f4f4;
+}

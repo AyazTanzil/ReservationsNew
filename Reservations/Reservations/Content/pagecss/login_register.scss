@@ -1,0 +1,299 @@
+﻿/*------------ 1 Typography --------------------*/
+@import "stylehf.scss";
+
+/*--------------------------------------------------------------------------------
+    --------------------------------- LOGIN.ASPX PAGE STYLE ------------------------------
+-------------------------------------------------------------------------------------------
+         /\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\
+*/
+
+.alert {
+    margin: 0px !important;
+}
+
+#ErrorAlert {
+    display: none;
+
+    .alert {
+        margin-bottom: 10px !important;
+        padding: 4px 15px !important;
+    }
+}
+
+.form-group {
+    label:nth-child(1) {
+        position: absolute;
+        background: #f1f1f1;
+        padding: 4px 10px;
+        height: 37px;
+        width: 60px;
+        color: #888;
+        margin-top: 1px;
+        margin-left: 1px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 15px;
+        margin-bottom: 0px;
+        border-right: 1px solid #D1DCD8;
+
+        .req {
+            font-size: 14px;
+            vertical-align: top;
+            color: red;
+        }
+    }
+}
+
+.form-control {
+    padding: 3px 12px 3px 70px !important;
+}
+
+.egr-content {
+    position: relative;
+    background-color: $egrbggrey;
+    width: 100%;
+    min-height: 650px;
+    padding-top: 3.8em;
+    padding-bottom: 1em;
+}
+
+.egr-lr-tab {
+    width: 552px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #DCDCDC;
+    border-bottom: 0px solid transparent;
+
+    i {
+        margin-right: 3px;
+    }
+
+    .nav-item {
+        width: 180px;
+        border-right: 1px solid #fff;
+        margin: 0px;
+    }
+
+    .nav-item + .nav-item {
+        margin-left: 0px;
+    }
+
+    .nav-item:nth-child(3) {
+        width: 191px;
+    }
+
+    .nav-link {
+        font-weight: bold;
+        color: $egrfontblue;
+    }
+}
+
+.success-message {
+    margin-top: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+}
+
+.auth form {
+    width: 550px;
+    margin: 0em auto;
+    padding: 0em 1em 0em 1em;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    border: unset;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+    height: auto;
+    overflow: hidden;
+}
+
+#form-signin label {
+    display: inline;
+}
+
+form .section-head {
+    width: 100%;
+    display: block !important;
+    padding-top: 3em;
+}
+
+/* Button */
+
+.form-headding {
+    text-align: center;
+    padding: 0.6em 0.5em;
+    background-color: #FFF;
+    color: $egrfontblue;
+    width: 550px;
+    margin: 0px auto;
+    font-size: 1.5em;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+.sub-head-form {
+    font-size: 14px;
+    color: $yellowcolor;
+}
+
+.form-desc {
+    text-align: center;
+    color: $egrfontblue;
+}
+
+.yellow {
+    color: $activebluecolor;
+    font-size: 13px;
+    margin: 0px;
+    text-align: center;
+    display: block;
+
+    &:hover, &:active {
+        color: $yellowcolor;
+    }
+}
+
+.egr-forgot {
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+}
+
+.egr-padding {
+    text-align: center;
+
+    .btn-facebook, .btn-google {
+        position: relative;
+        text-align: right;
+        padding: 6px 25px;
+        width: 100%;
+        margin: 1em 0 1em 0;
+        font-size: 13px;
+        text-align: center;
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.12);
+        margin-left: auto;
+        margin-right: auto;
+
+        i {
+            position: absolute;
+            padding: 5px 10px;
+            border-right: 1px solid #333;
+            left: -1px;
+            width: 40px;
+        }
+    }
+
+    .btn-facebook {
+        background-color: #45619D;
+        border: 1px solid #45619D;
+        color: #FFF;
+
+        i {
+            border-color: #FFF;
+        }
+
+        &:hover, &:active {
+            background-color: #FFF;
+            color: #45619D;
+
+            i {
+                border-color: #45619D;
+            }
+        }
+    }
+
+    .btn-google {
+        background-color: #EE5161;
+        border: 1px solid #EE5161;
+        color: #FFF;
+
+        i {
+            border-color: #FFF;
+        }
+
+        &:hover, &:active {
+            background-color: #FFF;
+            color: #EE5161;
+
+            i {
+                border-color: #EE5161;
+            }
+        }
+    }
+}
+
+.divider-s {
+    display: inline-block;
+    font-size: 22px;
+    position: relative;
+    margin-bottom: 20px;
+    color: #999999;
+    text-align: center;
+}
+
+.divider-s:before {
+    content: "";
+    left: 45px;
+    right: inherit;
+    bottom: 0px;
+    width: 215px;
+    height: 1px;
+    border-top: 1px dashed #999999;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    top: 50%;
+    margin-top: -3px;
+}
+
+.divider-s:after {
+    content: "";
+    left: inherit;
+    right: 45px;
+    bottom: 0;
+    width: 215px;
+    height: 1px;
+    border-top: 1px dashed #999999;
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+}
+
+/* Ripples animation */
+
+@-webkit-keyframes ripples {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 200%;
+        padding-bottom: 200%;
+        opacity: 0;
+    }
+}
+
+@keyframes ripples {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 200%;
+        padding-bottom: 200%;
+        opacity: 0;
+    }
+}

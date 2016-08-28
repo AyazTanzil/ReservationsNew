@@ -1,0 +1,228 @@
+﻿@import "stylehf.scss";
+
+.egr-search-card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background: #ffbb39;
+    background: -webkit-gradient(linear,left top,left bottom,from(#ffca56),to(#ffbb39));
+    background: -webkit-linear-gradient(top,#ffca56 0,#ffbb39 100%);
+    background: linear-gradient(to bottom,#ffca56 0,#ffbb39 100%);
+    padding: 0px;
+    border-radius: 0px;
+    border: 1px solid $btnhoveryellow;
+    border-color: #daa300;
+    box-shadow: 0px -1px 3px rgba(224, 164, 22, 1.23);
+    margin-bottom: 15px;
+
+    .form-group, .input-group{
+        margin-bottom:10px;
+    }
+
+    .form-control{
+            border-color: #daa300;
+            color:$egrfontblue;
+
+            &:hover{
+                border-color:#b68800;
+            }
+    }
+
+    .egr-padding {
+        padding-top: 1em;
+    }
+
+    .card {
+        border: 0px;
+        margin: 0px;
+    }
+
+    .card-header {
+        border-radius: 0px;
+        background: #ffbb39;
+        background: -webkit-gradient(linear,left top,left bottom,from(#ffca56),to(#ffbb39));
+        background: -webkit-linear-gradient(top,#ffca56 0,#ffbb39 100%);
+        background: linear-gradient(to bottom,#ffca56 0,#ffbb39 100%);
+        border-bottom: 1px solid #f2d84c;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .egr-srch-head1 {
+            font-size: 1.3rem;
+            color: $egrfontcolor;
+            margin: 0px;
+
+            span {
+                font-size: 2.5rem;
+                color: $egrfontcolor;
+                margin-top: -15px;
+            }
+        }
+
+        .egr-srch-head2 {
+            font-size: 0.8rem;
+            color: #fff;
+            margin: 0px;
+            letter-spacing: 1px;
+            margin-top: -12px;
+            margin-left: 35px;
+        }
+    }
+
+    .card-block {
+        padding-top: 5px;
+        background: #ffbb39;
+        background: -webkit-gradient(linear,left top,left bottom,from(#ffca56),to(#ffbb39));
+        background: -webkit-linear-gradient(top,#ffca56 0,#ffbb39 100%);
+        background: linear-gradient(to bottom,#ffca56 0,#ffbb39 100%);
+
+        form {
+            label {
+                color: $egrfontblue;
+                font-size:1em;
+                width:102%;
+            }
+
+            .input-group-addon {
+                font-size: 0.7rem;
+                background-color: $bluecolor;
+                border: 1px solid $activebluecolor;
+                border-left:0px solid transparent;
+                border-radius: 0px;
+                border-top-right-radius:5px;
+                border-bottom-right-radius:5px;
+                padding:.375rem .65rem;
+                i{
+                    color:#fff;
+                }
+                cursor: pointer;
+
+                &:active, &:hover, &:focus {
+                    background-color: $activebluecolor;
+                }
+            }
+
+
+            h6 {
+                font-weight: 700;
+            }
+
+            select {
+                /* styling */
+                display: inline-block;
+                font: inherit;
+                line-height: 1.5em;
+                font-size: 12px;
+                height:30px;
+                /* reset */
+                margin: 0;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+            }
+            /* arrows */
+            select.form-control {
+                background-image: linear-gradient(45deg, transparent 50%, #FFF 50%), linear-gradient(135deg, #FFF 50%, transparent 50%), linear-gradient(to right, $bluecolor, $bluecolor);
+                background-position: calc(100% - 10px) calc(1em + 0px), calc(100% - 5px) calc(1em + 0px), 100% 0;
+                background-size: 5px 5px, 5px 5px, 1.6em 2.5em;
+                background-repeat: no-repeat;
+            }
+
+            select:-moz-focusring {
+                color: transparent;
+                text-shadow: 0 0 0 #000;
+            }
+
+            .btn-primary {
+                float: right;
+            }
+        }
+    }
+
+    .egr-subs {
+        min-height: 60px;
+        background: #fde29d;
+        border-radius: 4px;
+        margin-top: -3px;
+
+        .searchform-subscribe-box {
+            color: #424242;
+            padding: 14px 12px;
+            position: relative;
+            z-index: 7;
+            top: -3px;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .fa-globe {
+            position: absolute;
+            top: 15px;
+            font-size: 2em;
+            border: 1px solid $btnhoveryellow;
+            padding: 0px 2px;
+            border-radius: 50%;
+            background-color: $yellowcolor;
+            color: $btnhoveryellow;
+        }
+
+        .searchform-subscribe-box-headergroup {
+            overflow: hidden;
+            position: relative;
+            padding: 10px 39px;
+        }
+
+        h5 {
+            font-size: 17px;
+            font-weight: 400;
+            margin: 0 0 .1em;
+        }
+
+        h6 {
+            line-height: normal;
+        }
+
+        h6 {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 200;
+            padding-right: 40px;
+        }
+
+        .egr-toggle-signup {
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            cursor: pointer;
+
+            i {
+                color: #c0a357;
+            }
+        }
+
+        .egr-sign-section {
+            position: relative;
+
+            .form-control {
+                height: 42px;
+                border: 2px solid $activebluecolor;
+            }
+
+            .btn {
+                padding: 5px 25px;
+                position: absolute;
+                right: 5px;
+                top: 11.45%;
+            }
+        }
+    }
+
+    .input-group {
+        margin: 2px !important;
+    }
+
+    .col-wt-pad {
+        padding: 2px;
+    }
+}

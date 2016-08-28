@@ -1,41 +1,365 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Reservations.Life</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" id="TheHtmlDocument">
+<head runat="server">
+    <title>Egress | Hotel Reservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/Content/Validate.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,900,700italic,400italic' rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var __customerID = '<% = Session["CustomerId"].ToString()%>';
+        var customerName = '<% = Session["CustomerName"].ToString()%>';
+        var __LoggedInCultureCode = "<%= LoggedInCultureCode %>";
+
+        sessionStorage.setItem("__customerID", __customerID);
+        sessionStorage.setItem("customerName", customerName);
+    </script>
+    <style>
+        .parsley-errors-list li {
+            text-align: left !important;
+        }
+    </style>
+    @RenderSection("Head", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <!-- Egress Header   -->
+    <header>
+        <nav class="navbar navbar-light navbar-full egr-nav-second">
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar3">
+                &#9776;
+            </button>
+            <div class="container">
+                <a class="navbar-brand" href="~/Default.aspx">
+                    <img src="~/Content/images/r-logo.png" />
+                </a>
+                <div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar3">
+                    @*<%--<a class="navbar-brand" href=" ~/Default.aspx"><img src=" ~/css/images/r-logo.png" /></a>--%>*@
+                    <ul class="nav navbar-nav nav pull-xs-right first-ul">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="popover" data-content="Comments"><i class="fa fa-commenting"></i><span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link egr-drp-currency" href="#">SAR</a>
+                            <div class="language_popover" id="egr-currency">
+                                <div style="" class="uc_top_arrow"></div>
+                                <div class="js-uc-language-content popover_content" id="current_language">
+                                    <div id="current_language_foldout" class="select_foldout small_flags_foldout">
+                                        <div class="select_foldout_wrap">
+                                            <ul class="language_flags">
+                                                <li class="lang_en-gb" data-lang="en-gb">
+                                                    <a href="#" class="no_target_blank">
+                                                        <span class="fa fa-euro selsymbol"></span>
+                                                        <span class="seldescription">
+                                                            France
+                                                        </span>
+                                                        <i class="loading_indicator"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="lang_en-us selected_country" data-lang="en-us">
+                                                    <a href="#" class="no_target_blank">
+                                                        <span class="fa fa-usd selsymbol"></span>
+                                                        <span class="seldescription">
+                                                            English (US)
+                                                        </span>
+                                                        <i class="loading_indicator"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="lang_en-us selected_country" data-lang="en-us" onclick="changeLanguage(2)">
+                                                    <a href="#" class="no_target_blank active">
+                                                        <span class="selsymbol">SAR</span>
+                                                        <span class="seldescription">
+                                                            Saudi Arabian Riyal
+                                                        </span>
+                                                        <i class="loading_indicator"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uc_bottom_arrow"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link egr-drp-language lang-fl" href="#" onclick="javascript: return false">
+                                <img src="" class="country-flag img-responsive" alt="" />
+                            </a>
+                            <div class="language_popover" id="egr-language">
+                                <div style="" class="uc_top_arrow"></div>
+                                <div class="js-uc-language-content popover_content" id="Div1">
+                                    <div id="Div2" class="select_foldout small_flags_foldout">
+                                        <div class="select_foldout_wrap">
+                                            <ul class="language_flags">
+                                                <li class="lang_en-us selected_country">
+                                                    <a href="#" class="no_target_blank btnLang active" data-lang="en-US">
+                                                        <span class="selsymbol">
+                                                            <img src="~/css/images/united_states_of_america.png" class="country-flag img-responsive" alt="" />
+                                                        </span>
+                                                        <span class="seldescription">
+                                                            English (US)
+                                                        </span>
+                                                        <i class="loading_indicator"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="lang_ar" data-lang="ar">
+                                                    <a href="#" class="no_target_blank btnLang" data-lang="ar-SA">
+                                                        <span class="selsymbol">
+                                                            <img src="~/css/images/country.png" class="country-flag img-responsive" alt="" />
+                                                        </span>
+                                                        <span class="seldescription">
+                                                            العربية
+                                                        </span>
+                                                        <i class="loading_indicator"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="lang_ar">
+                                                    <a href="#" class="no_target_blank btnLang" data-lang="fr-FR">
+                                                        <span class="selsymbol">
+                                                            <img src="~/css/images/France-Flag-icon.png" class="country-flag img-responsive" alt="" />
+                                                        </span>
+                                                        <span class="seldescription">
+                                                            French
+                                                        </span>
+                                                        <i class="loading_indicator"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uc_bottom_arrow"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="SuccMessage('error! loading images.')" data-toggle="popover" data-content="Recently Seen"><%= GetLocalResourceObject("908") %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="popover" data-content="My List"><i class="fa fa-heart"></i><%= GetLocalResourceObject("909") %></a>
+                        </li>
+                        @*<%-- @*<li class="nav-item li-map-mark-m">
+                                <a class="nav-link" href="#">
+                                    <img src="~/css/images/mapmarkerm.png" alt="" runat="server" class="map-mark-m"></a>
+                            </li>
+                        *@
+                        <%--
+                        <li class="nav-item li-btn-m">
+                            <a class="nav-link" href="#">
+                                <h5 hidden="hidden" id="CustomerName"></h5>
+                                <input type="button" class="btn btn-green btn-sm" hidden="hidden" id="btn-regbox" data-toggle="modal" data-target="#signin-box" value="<%= GetLocalResourceObject(" 11" />
+                            </a>
+                        </li>--%>
+                        <li class="nav-item">
+                            <a class="nav-link hide-links" href="#">
+                                <img src="../../css/images/user-r.png" />
+                                Welcome, <span id="UserName"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item li-btn-m libtn2">
+                            <a class="nav-link" href="~/webpages/LoginRegister.aspx">
+                                <input type="button" id="btn-login" hidden="hidden" class="btn btn-default btn-xs" value="<%= GetLocalResourceObject(" 910" />
+                                <input type="button" id="btn-logout" onclick="Logout()" class="btn btn-default btn-xs hide-links" value="<%= GetLocalResourceObject(" 182" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"></ul>
+        </nav>
+
+        <nav class="navbar navbar-dark navbar-full egr-nav-first">
+            <div class="container">
+                <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+                    &#9776;
+                </button>
+                <div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
+
+                    <ul class="nav navbar-nav pull-xs-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Default.aspx" data-toggle="popover" data-content="Home"><%= GetLocalResourceObject("8") %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/WebPages/CommingSoon.aspx"><%= GetLocalResourceObject("911") %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/WebPages/CommingSoon.aspx"><%= GetLocalResourceObject("160") %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/WebPages/CommingSoon.aspx"><%= GetLocalResourceObject("912") %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/WebPages/CommingSoon.aspx"><%= GetLocalResourceObject("28") %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/WebPages/CommingSoon.aspx"><%= GetLocalResourceObject("9") %></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <section class="row egr-site-content-wrapper">
+        @RenderBody()
+    </section>
+    <!-- Egress Footer   -->
+
+    <footer id="footer">
+
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-5 col-lg-5">
+                        <h2><%= GetLocalResourceObject("1086") %></h2>
+                        <p>Development of Egress was started in 2015. With a long history in the market to meet the technical requirements of customers, this program carries a deep understanding of the business environment in Saudi Arabia As this program caters to the requirements and needs of each facility, it has achieved a widespread use.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <h2><%= GetLocalResourceObject("166") %></h2>
+                        <ul class="contact egr-foot-contact">
+                            <li class="active"><a href="~/Default.aspx"><i class="fa fa-angle-right"></i><%= GetLocalResourceObject("8") %></a></li>
+                            <li><a href="~/WebPages/commingsoon.aspx"><i class="fa fa-angle-right"></i><%= GetLocalResourceObject("911") %></a></li>
+                            <li><a href="~/WebPages/commingsoon.aspx"><i class="fa fa-angle-right"></i><%= GetLocalResourceObject("160") %></a></li>
+                            <li><a href="~/WebPages/commingsoon.aspx"><i class="fa fa-angle-right"></i><%= GetLocalResourceObject("912") %></a></li>
+                            <li><a href="~/WebPages/commingsoon.aspx"><i class="fa fa-angle-right"></i><%= GetLocalResourceObject("9") %></a></li>
+                            <li><a href="~/WebPages/commingsoon.aspx"><i class="fa fa-angle-right"></i><%= GetLocalResourceObject("28") %></a></li>
+                        </ul>
+                    </div>
+                    <%-- <div class="col-sm-6 col-md-2 col-lg-3">
+                        <h2><%= GetLocalResourceObject("978") %></h2>
+                        <ul class="about egr-foot-about nav nav-inline nav-social">
+                            <li class="nav-item link-facebook"><a href="#" class="a1"><i class="fa fa-facebook"></i></a><a href="#" class="a2"><i class="fa fa-facebook"></i></a></li>
+                            <li class="nav-item link-google"><a href="#" class="a1"><i class="fa fa-google-plus"></i></a><a href="#" class="a2"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="nav-item link-twitter"><a href="#" class="a1"><i class="fa fa-twitter"></i></a><a href="#" class="a2"><i class="fa fa-twitter"></i></a></li>
+                            <li class="nav-item link-linkedin"><a href="#" class="a1"><i class="fa fa-linkedin"></i></a><a href="#" class="a2"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>--%>
+                    <div class="col-sm-6 col-md-4">
+                        <h2><%= GetLocalResourceObject("1087") %></h2>
+                        <p><%= GetLocalResourceObject("1088") %></p>
+                        <address class="contact-details">
+                            <span class="contact-phone"><i class="fa fa-phone"></i><span class="egr-numb">1-800-123-HELLO</span></span><span class="egr-free"> FREE</span>
+                            <br />
+                            <a href="#" class="contact-email"><i class="fa fa-at yellow"></i>help@egress.com</a>
+                        </address>
+                    </div>
+                </div>
+
+                <hr class="egr-ft-hr egr-ft-hr1" />
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-4 text-xs-center egr-fa-col">
+                        <ul class="about egr-foot-about nav nav-inline nav-browsers">
+                            <li class="nav-item">
+                                <img src="~/css/images/windows-icon.png" />
+                            </li>
+                            <li class="nav-item">
+                                <img src="~/css/images/mac-icon.png" />
+
+                            </li>
+                            <li class="nav-item">
+                                <img src="~/css/images/linux-icon.png" )%>" />
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 text-xs-center egr-fa-col">
+                        <ul class="about egr-foot-about nav nav-inline nav-browsers">
+                            <li class="nav-item">
+                                <img src="~/css/images/mozilla-icon.png" )%>" />
+                            </li>
+                            <li class="nav-item">
+                                <img src="~/css/images/chrome-icon.png" )%>" />
+
+                            </li>
+                            <li class="nav-item">
+                                <img src="~/css/images/safari-icon.png" )%>" />
+
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-sm-6 col-md-4 col-lg-4 text-xs-center egr-fa-col">
+                        <ul class="about egr-foot-about nav nav-inline nav-social">
+                            <li class="nav-item link-facebook"><a href="#" class="a1"><i class="fa fa-facebook"></i></a><a href="#" class="a2"><i class="fa fa-facebook"></i></a></li>
+                            <li class="nav-item link-google"><a href="#" class="a1"><i class="fa fa-google-plus"></i></a><a href="#" class="a2"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="nav-item link-twitter"><a href="#" class="a1"><i class="fa fa-twitter"></i></a><a href="#" class="a2"><i class="fa fa-twitter"></i></a></li>
+                            <li class="nav-item link-linkedin"><a href="#" class="a1"><i class="fa fa-linkedin"></i></a><a href="#" class="a2"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="egr-ft-hr" />
             </div>
         </div>
+
+        <div class="bottom gray-area container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <p class="copy"><%= GetLocalResourceObject("1089") %></p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <ul class="nav nav-inline text-xs-right online-payment">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">
+                                <img src="~/css/images/MasterCard.jpg" )%>" />
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link" href="#">
+                                <img src="~/css/images/american-express.jpg" )%>" />
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link" href="#">
+                                <img src="~/css/images/PayPal.jpg" )%>" />
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link" href="#">
+                                <img src="~/css/images/Visa.jpg" )%>" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="bottom-to-top">
+        <a href="#">
+            <i class="fa fa-arrow-up"></i>
+        </a>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/tether.min.js"></script>
+    <script src="~/Scripts/jquery.easing.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.easing.js"></script>
+    <script src="~/Scripts/jquery.flexslider-min.js"></script>
+    <script src="~/Scripts/parsley.js"></script>
+    <script src="~/Scripts/toast.min.js"></script>
+    <script src="~/Scripts/common.js"></script>
     <script src="~/Scripts/CommonScripts/AjaxHandler.js"></script>
-    @RenderSection("scripts", false);
+    <script src="~/Scripts/Validate.js"></script>
+    <script src="~/Scripts/sweetalert2.min.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script src="~/Scripts/CommonScripts/MasterPage.js"></script>
+    @*<script>
+            if ('<% = Session["CustomerName"].ToString()%>' !== "-1") {
+                $("#UserName").html('<% = Session["CustomerName"].ToString()%>');
+            }
 
+        </script>*@
+    @RenderSection("Footer", required: false)
 </body>
 </html>
