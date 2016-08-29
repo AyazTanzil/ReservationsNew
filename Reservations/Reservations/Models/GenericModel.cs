@@ -10,4 +10,9 @@ namespace Reservations.Models
         public string Name { get; set; }
         public string Value { get; set; }
     }
+    public class DataModel
+    {
+        public List<GenericModel> paramsList { get; set; }
+        public string ProcName { get; set; }
+    }
 }

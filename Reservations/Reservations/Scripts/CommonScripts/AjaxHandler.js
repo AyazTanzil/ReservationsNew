@@ -1,9 +1,9 @@
 ﻿function ExecuteQueryCommand(param, proc) {
     return $.ajax({
-        url: "api/DataBase/",
+        url: "api/DataBase/ExecuteQueryCommand/",
         type: "POST",
         datatype: "json",
-        data: JSON.stringify(param),
+        data: JSON.stringify({ paramsList: param, procName: proc }),
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             console.log(data);
@@ -14,7 +14,7 @@
 }
 function ExecuteNonQueryCommand(param, proc) {
     return $.ajax({
-        url: "api/DataBase/",
+        url: "api/DataBase/ExecuteNonQueryCommand/",
         type: "POST",
         datatype: "json",
         data: JSON.stringify({
