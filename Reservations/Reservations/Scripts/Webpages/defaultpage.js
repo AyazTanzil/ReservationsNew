@@ -252,14 +252,14 @@ function initialize() {
 }
 
 function ChangeTab(a) {
-    sessionStorage.setItem("TabID", a.id);
-    var currA = $(a);
-    $(currA).closest("nav").find(".active").removeClass("active");
-    $(currA).addClass("active");
+    //sessionStorage.setItem("TabID", a.id);
+    //var currA = $(a);
+    //$(currA).closest("nav").find(".active").removeClass("active");
+    //$(currA).addClass("active");
 
-    //active panel
+    ////active panel
 
-    $(".tab-content .active").removeClass("active");
-    var panel = $(currA).attr("href");
-    $(panel).addClass("active");
+    //$(".tab-content .active").removeClass("active");
+    //var panel = $(currA).attr("href");
+    //$(panel).addClass("active");
 }

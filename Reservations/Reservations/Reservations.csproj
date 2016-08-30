@@ -125,6 +125,7 @@
     <Content Include="Content\images\500 %282%29.gif" />
     <Content Include="Content\images\500 %283%29.gif" />
     <Content Include="Content\images\american-express.jpg" />
+    <Content Include="Content\images\amman.jpg" />
     <Content Include="Content\images\ar-bg.jpg" />
     <Content Include="Content\images\bg-01.jpg" />
     <Content Include="Content\images\bg-m.jpg" />
@@ -182,6 +183,7 @@
     <Content Include="Content\images\mac-icon.png" />
     <Content Include="Content\images\mapmarkerm.png" />
     <Content Include="Content\images\MasterCard.jpg" />
+    <Content Include="Content\images\mauritius.jpg" />
     <Content Include="Content\images\more.png" />
     <Content Include="Content\images\mozilla-icon.png" />
     <Content Include="Content\images\PayPal.jpg" />
@@ -216,6 +218,7 @@
     <Content Include="Content\images\visa.jpg" />
     <Content Include="Content\images\websit.png" />
     <Content Include="Content\images\windows-icon.png" />
+    <Content Include="Content\images\zagreb.jpg" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\jquery.fancybox.css" />
@@ -286,6 +289,10 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\C3counter.js" />
     <Content Include="Scripts\common.js" />

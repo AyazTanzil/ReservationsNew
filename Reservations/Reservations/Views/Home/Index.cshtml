@@ -15,23 +15,35 @@
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 left-side">
                 <div class="search-panel-wrapper">
                     <div class="search-tab">
-                        <nav role="tablist">
-                            <a class="nav-link active Rem" onclick="ChangeTab(this)" id="Hotel" href="#egr-hotel-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-bed margin-right"></i>@HttpContext.GetLocalResourceObject("HomeController","32") </a>
-                            <a class="nav-link Rem" id="Isteraha" onclick="ChangeTab(this)" href="#egr-isteraha-form" data-tab="egr-isteraha-form" data-toggle="tab" role="tab"><i class="fa fa-cutlery margin-right"></i>@HttpContext.GetLocalResourceObject("HomeController","914") </a>
-                            <a class="nav-link Rem" id="Apartment" onclick="ChangeTab(this)" href="#egr-app-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i>@HttpContext.GetLocalResourceObject("HomeController","15") </a>
-                            <a class="nav-link Rem" id="Villa" onclick="ChangeTab(this)" href="#egr-vila-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-home margin-right"></i>Villa</a>
-                            <a class="nav-link Rem" id="Villa1" onclick="ChangeTab(this)" href="#egr-wedding-form" data-tab="egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i>Wedding Hall</a>
-                        </nav>
+                        <ul class="nav nav-tabs" role="tablist">
+                            @* onclick="ChangeTab(this)" is been removed for temporary purpose *@
+                            <li class="nav-item current_page_item">
+                                <a class="nav-link active Rem" id="Hotel" href="#egr-hotel-form" data-toggle="tab" role="tab"><i class="fa fa-bed margin-right"></i>@HttpContext.GetLocalResourceObject("HomeController", "32") </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link Rem" id="Isteraha" href="#egr-isteraha-form" data-toggle="tab" role="tab"><i class="fa fa-cutlery margin-right"></i>@HttpContext.GetLocalResourceObject("HomeController", "914") </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link Rem" id="Apartment" href="#egr-app-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i>@HttpContext.GetLocalResourceObject("HomeController", "15") </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link Rem" id="Villa" href="#egr-vila-form" data-toggle="tab" role="tab"><i class="fa fa-home margin-right"></i>Villa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link Rem" id="Villa1" href="#egr-wedding-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i>Wedding Hall</a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="tab-content">
+
                         <div class="tab-pane active Rem" id="egr-hotel-form">
                             <div class="card">
                                 <div class="card-header">
                                     <i class="fa fa-search fa-2x egr-search-icon"></i>
-                                    <h4 class="egr-srch-head1">  <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
+                                    <h4 class="egr-srch-head1"> Search and Book Hotel <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
                                     <h6 class="egr-srch-head2">
                                         <br />
-                                        @HttpContext.GetLocalResourceObject("HomeController","916") 
+                                        @HttpContext.GetLocalResourceObject("HomeController","916")
                                     </h6>
                                 </div>
                                 <div class="card-block">
@@ -43,7 +55,7 @@
                                                     <label for="formGroupExampleInput">@HttpContext.GetLocalResourceObject("HomeController","906") </label>
                                                     <input type="text" class="form-control Destination" data-code="174" data-level="Country"
                                                            required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 907")"
-                                                    name="Destination" id="DestinationHotel" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
+                                                           name="Destination" id="DestinationHotel" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
                                                 </fieldset>
                                             </div>
                                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 hidden-md-up">
@@ -56,7 +68,7 @@
                                                         <div class="input-group">
                                                             <input type="text" class="form-control egr-calendar" id="CheckIn"
                                                                    required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 897")"
-                                                            name="CheckIn" placeholder="@HttpContext.GetLocalResourceObject("HomeController","919") " />
+                                                                   name="CheckIn" placeholder="@HttpContext.GetLocalResourceObject("HomeController","919") " />
                                                             <div class="input-group-addon" id="btn-chk-in"><i class="fa fa-calendar"></i></div>
                                                         </div>
                                                     </div>
@@ -67,7 +79,7 @@
                                                         <div class="input-group">
                                                             <input type="text" class="form-control egr-calendar" id="CheckOut"
                                                                    required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 897")"
-                                                            name="CheckOut" placeholder="@HttpContext.GetLocalResourceObject("HomeController","920") " />
+                                                                   name="CheckOut" placeholder="@HttpContext.GetLocalResourceObject("HomeController","920") " />
                                                             <div class="input-group-addon" id="btn-chk-out"><i class="fa fa-calendar"></i></div>
                                                         </div>
                                                     </div>
@@ -131,7 +143,7 @@
                                     <h4 class="egr-srch-head1">@HttpContext.GetLocalResourceObject("HomeController","925")  <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
                                     <h6 class="egr-srch-head2">
                                         <br />
-                                        @HttpContext.GetLocalResourceObject("HomeController","916") 
+                                        @HttpContext.GetLocalResourceObject("HomeController","916")
                                     </h6>
                                 </div>
                                 <div class="card-block">
@@ -147,7 +159,7 @@
                                                         <label for="formGroupExampleInput">@HttpContext.GetLocalResourceObject("HomeController","906") </label>
                                                         <input type="text" class="form-control Destination3" data-code="174" data-level="Country"
                                                                required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 907")"
-                                                        name="Destination3" id="Destination3" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
+                                                               name="Destination3" id="Destination3" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-xs-12 egr-no-pad">
@@ -203,7 +215,7 @@
                                     <h4 class="egr-srch-head1">Search Apartment <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
                                     <h6 class="egr-srch-head2">
                                         <br />
-                                        @HttpContext.GetLocalResourceObject("HomeController","916") 
+                                        @HttpContext.GetLocalResourceObject("HomeController","916")
                                     </h6>
                                 </div>
                                 <div class="card-block">
@@ -215,7 +227,7 @@
                                                     <label for="formGroupExampleInput">@HttpContext.GetLocalResourceObject("HomeController","906") </label>
                                                     <input type="text" class="form-control Destination" data-code="174" data-level="Country"
                                                            required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 907")"
-                                                    name="Destination" id="DestinationHotel" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
+                                                           name="Destination" id="DestinationHotel" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
                                                 </fieldset>
                                             </div>
                                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 hidden-md-up">
@@ -228,7 +240,7 @@
                                                         <div class="input-group">
                                                             <input type="text" class="form-control egr-calendar" id="CheckIn"
                                                                    required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 897")"
-                                                            name="CheckIn" placeholder="@HttpContext.GetLocalResourceObject("HomeController","919") " />
+                                                                   name="CheckIn" placeholder="@HttpContext.GetLocalResourceObject("HomeController","919") " />
                                                             <div class="input-group-addon" id="btn-chk-in"><i class="fa fa-calendar"></i></div>
                                                         </div>
                                                     </div>
@@ -239,7 +251,7 @@
                                                         <div class="input-group">
                                                             <input type="text" class="form-control egr-calendar" id="CheckOut"
                                                                    required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 897")"
-                                                            name="CheckOut" placeholder="@HttpContext.GetLocalResourceObject("HomeController","920") " />
+                                                                   name="CheckOut" placeholder="@HttpContext.GetLocalResourceObject("HomeController","920") " />
                                                             <div class="input-group-addon" id="btn-chk-out"><i class="fa fa-calendar"></i></div>
                                                         </div>
                                                     </div>
@@ -303,7 +315,7 @@
                                     <h4 class="egr-srch-head1">Search Vila <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
                                     <h6 class="egr-srch-head2">
                                         <br />
-                                        @HttpContext.GetLocalResourceObject("HomeController","916") 
+                                        @HttpContext.GetLocalResourceObject("HomeController","916")
                                     </h6>
                                 </div>
                                 <div class="card-block">
@@ -319,7 +331,7 @@
                                                         <label for="formGroupExampleInput">@HttpContext.GetLocalResourceObject("HomeController","906") </label>
                                                         <input type="text" class="form-control Destination3" data-code="174" data-level="Country"
                                                                required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 907")"
-                                                        name="Destination3" id="VillaDestination3" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
+                                                               name="Destination3" id="VillaDestination3" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-xs-12 egr-no-pad">
@@ -375,7 +387,7 @@
                                     <h4 class="egr-srch-head1">Search Wedding Hall <span class="pull-xs-right"><i class="soap-icon-hotel"></i></span></h4>
                                     <h6 class="egr-srch-head2">
                                         <br />
-                                        @HttpContext.GetLocalResourceObject("HomeController","916") 
+                                        @HttpContext.GetLocalResourceObject("HomeController","916")
                                     </h6>
                                 </div>
                                 <div class="card-block">
@@ -391,7 +403,7 @@
                                                         <label for="formGroupExampleInput">@HttpContext.GetLocalResourceObject("HomeController","906") </label>
                                                         <input type="text" class="form-control Destination3" data-code="174" data-level="Country"
                                                                required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 907")"
-                                                        name="Destination3" id="WeddingDestination3" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
+                                                               name="Destination3" id="WeddingDestination3" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-xs-12 egr-no-pad">
@@ -422,7 +434,6 @@
                                                                 <td>@HttpContext.GetLocalResourceObject("HomeController","929") </td>
                                                             </tr>
                                                         </tbody>
-
                                                     </table>
                                                 </div>
                                             </div>
@@ -446,10 +457,10 @@
 
             <div class="sidebar col-md-3 col-lg-3 right-side hidden-md-down">
                 <div class="egr-box contact-box">
-                    <h4>@HttpContext.GetLocalResourceObject("HomeController","935") </h4>
-                    <p>@HttpContext.GetLocalResourceObject("HomeController","936") </p>
+                    <h4>@HttpContext.GetLocalResourceObject("HomeController", "935") </h4>
+                    <p>@HttpContext.GetLocalResourceObject("HomeController", "936") </p>
                     <address class="contact-details">
-                        <span class="contact-phone"><i class="fa fa-phone"></i><span class="egr-numb">1-800-123</span></span><span class="egr-free"> @HttpContext.GetLocalResourceObject("HomeController","937") </span>
+                        <span class="contact-phone"><i class="fa fa-phone"></i><span class="egr-numb">1-800-123</span></span><span class="egr-free"> @HttpContext.GetLocalResourceObject("HomeController", "937") </span>
                         <br />
                         <a class="contact-email" href="#">help@reservation.com</a>
                     </address>
@@ -471,9 +482,113 @@
     </div>
 </section>
 
+<section class="container countries-hotels-cont">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <div class="hotels-single-country">
+                <img src="~/Content/images/amman.jpg" />
+                <div class="count-det">
+                    <div class="unified-postcard__overlay">
+                        <div class="unified-postcard__header">
+                            <a href="#">
+                                Dubai
+                                <img src="#" alt="United Arab Emirates" valign="middle">
+                            </a>
+                            <p>855 properties</p>
+                        </div>
+                        <p class="unified-postcard__price"> Average price per night – PKR&nbsp;11,123  </p>
+                        <a class="dficon-circle yellow jq_tooltip endorsement-container"><b class="df_inner dficon-25"></b></a>
+                        <a href="#">
+                            <span class="bicon-airport lp-postcard-airport-info-badge jq_tooltip" data-title="Airports closest to Dubai: Dubai Airport, Sharjah Airport and Al Maktoum International Airport" rel="300"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+            <div class="hotels-single-country">
+                <img src="~/Content/images/mauritius.jpg" />
+                <div class="count-det">
+                    <div class="unified-postcard__overlay">
+                        <div class="unified-postcard__header">
+                            <a href="#">
+                                Dubai
+                                <img src="#" alt="United Arab Emirates" valign="middle">
+                            </a>
+                            <p>855 properties</p>
+                        </div>
+                        <p class="unified-postcard__price"> Average price per night – PKR&nbsp;11,123  </p>
+                        <a class="dficon-circle yellow jq_tooltip endorsement-container"><b class="df_inner dficon-25"></b></a>
+                        <a href="#">
+                            <span class="bicon-airport lp-postcard-airport-info-badge jq_tooltip" data-title="Airports closest to Dubai: Dubai Airport, Sharjah Airport and Al Maktoum International Airport" rel="300"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+            <div class="hotels-single-country">
+                <img src="~/Content/images/zagreb.jpg" />
+                <div class="count-det">
+                    <div class="unified-postcard__overlay">
+                        <div class="unified-postcard__header">
+                            <a href="#">
+                                Dubai
+                                <img src="#" alt="United Arab Emirates" valign="middle">
+                            </a>
+                            <p>855 properties</p>
+                        </div>
+                        <p class="unified-postcard__price"> Average price per night – PKR&nbsp;11,123  </p>
+                        <a class="dficon-circle yellow jq_tooltip endorsement-container"><b class="df_inner dficon-25"></b></a>
+                        <a href="#">
+                            <span class="bicon-airport lp-postcard-airport-info-badge jq_tooltip" data-title="Airports closest to Dubai: Dubai Airport, Sharjah Airport and Al Maktoum International Airport" rel="300"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 @section Footer
 {
     @*<script async defer type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBXtwnRFvVhGT-42e__Rnrl2l5SFGrCQOE&callback=initialize"></script>*@
     @*<script src="~/Scripts/WebPages/defaultpage.js"></script>*@
+    <script>
+        $(function () {
+            var $el, leftPos, newWidth;
+
+            /*
+                EXAMPLE ONE
+            */
+
+            /* Add Magic Line markup via JavaScript, because it ain't gonna work without */
+            $(".search-tab .nav-tabs").append("<li id='magic-line'></li>");
+
+            /* Cache it */
+            var $magicLine = $("#magic-line");
+
+            $magicLine
+                .width($(".current_page_item").width())
+                .css("left", $(".current_page_item a").position().left)
+                .data("origLeft", $magicLine.position().left)
+                .data("origWidth", $magicLine.width());
+
+            $(".search-tab .nav-tabs li").find("a").click(function () {
+                $el = $(this);
+                leftPos = $el.position().left;
+                newWidth = $el.parent().width();
+
+                $magicLine.stop().animate({
+                    left: leftPos,
+                    width: newWidth
+                });
+            });
+        });
+
+    </script>
 
 }
