@@ -323,6 +323,7 @@
     <Content Include="Scripts\Webpages\Default.js" />
     <Content Include="Scripts\Webpages\defaultpage.js" />
     <Content Include="Scripts\wow.min.js" />
+    <Content Include="Views\C1\Reservations.js" />
     <Content Include="Views\Shared\_Layout.js">
       <DependentUpon>_Layout.cshtml</DependentUpon>
     </Content>
