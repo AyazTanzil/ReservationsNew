@@ -350,17 +350,10 @@
     <script src="../../../Scripts/toast.min.js"></script>
     <script src="../../../Scripts/common.js"></script>
     <script src="../../../Scripts/CommonScripts/AjaxHandler.js"></script>
-    <script src="../../../Scripts/Validate.js"></script>
     <script src="../../../Scripts/sweetalert2.min.js"></script>
     <script src="../../../Scripts/wow.min.js"></script>
-    @*<script src="../../../Scripts/CommonScripts/MasterPage.js"></script>*@
     <script src="~/views/shared/_layout.js"></script>
-    @*<script>
-            if ('<% = Session["CustomerName"].ToString()' !== "-1") {
-                $("#UserName").html('<% = Session["CustomerName"].ToString()');
-            }
-
-        </script>*@
+    <script src="~/Scripts/CommonScripts/Utilities.js"></script>
     @RenderSection("Footer", required: false)
 </body>
 </html>
