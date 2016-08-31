@@ -3,6 +3,474 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section Head{
+    <link rel="stylesheet" href="~/Content/pagecss/stylehotel.css" />
+    <link rel="stylesheet" href="~/Content/dataTables.bootstrap4.min.css" />
+    @*<link rel="stylesheet" href="~/Content/arabiccss/ovstylehotel.css" />*@
+    <script>
+        var __ViewSimillarProp = '<%= GetLocalResourceObject("1104") %>';
+        var __ViewHotDetails = '<%= GetLocalResourceObject("1132") %>';
+        var __ViewApaDetails = '<%= GetLocalResourceObject("1112") %>';
+        var __MakeInquirey = '<%= GetLocalResourceObject("126") %>';
+        var __BookNow = '<%= GetLocalResourceObject("69") %>';
+        var __Favorite = '<%= GetLocalResourceObject("1108") %>';
+        var __Reviews = '<%= GetLocalResourceObject("1020") %>';
+        var __Str_Booked = '<%= GetLocalResourceObject("1113") %>';
+        var __Str_tt = '<%= GetLocalResourceObject("1114") %>';
+    </script>
+}
+<div class="container">
 
-<h2>Index</h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="search-card">
+                <div class="col-xs-12 col-sm-12 col-md-1 frst-col">
+                    <i class="fa fa-search"></i>Search Hotel
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <div class="form-group has-feedback sc-border-right">
+                        <input type="text" class="form-control" id="" placeholder="Your destination" />
+                        <span class="fa fa-search form-control-feedback"></span>
+                    </div>
+                    <span class="seperator-vr"></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 egr-calendar-icon egr-no-pad">
+                    <div class="col-xs-6 col-sm-6 col-md-6 egr-no-pad first-div">
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" id="checkin" placeholder="Check In" />
+                            <span class="fa fa-calendar form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 egr-no-pad">
+                        <div class="form-group has-feedback sc-border-right">
+
+                            <input type="text" class="form-control" id="checkout" placeholder="Check Out" />
+                            <span class="fa fa-calendar form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <span class="seperator-vr vr-2"></span>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 egr-no-pad">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-padding-right">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Adults" value="0 Adults" name="Adults" id="Adults" />
+                            <div class='input-group-addon no-radius minus-it' data-field="Adults"><i class="fa fa-minus"></i></div>
+                            <div class='input-group-addon plus-it' data-field="Adults"><i class="fa fa-plus"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 egr-no-pad col-padding-right">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Kids" value="0 Kids" name="Kids" id="Kids" />
+                            <div class='input-group-addon no-radius minus-it' data-field="Kids"><i class="fa fa-minus"></i></div>
+                            <div class='input-group-addon plus-it' data-field="Kids"><i class="fa fa-plus"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 egr-no-pad">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Infants" value="0 Infants" name="Infants" id="Infants" />
+                            <div class='input-group-addon no-radius minus-it' data-field="Infants"><i class="fa fa-minus"></i></div>
+                            <div class='input-group-addon plus-it' data-field="Infants"><i class="fa fa-plus"></i></div>
+                        </div>
+                        <span class="seperator-vr vr-3"></span>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <button type="submit" id="HotelSearch" class="btn btn-yellow btn-sm spcl-padding" value="" style="margin-top: -4px;"><span class="fa fa-search button-icon"></span>Search</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 left-sidebar left-side egr-no-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 map-panel">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="egr-srch-head1"><i class="fa fa-map-marker"></i>Map</h4>
+                        </div>
+                        <div class="card-block">
+                            <div id="map_wrapper">
+                                <div id="map_canvas" class="mapping"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card egr-filter">
+            <div class="card-header">
+                <h4><i class="fa fa-filter"></i>Filter</h4>
+            </div>
+            <div class="card-block egr-no-pad">
+
+                <div class="col-xs-12 card-block-padding">
+                    <a href="#sname" data-toggle="collapse" class="egr-colapse">
+                        <h5 class="card-title"><i class="fa fa-building"></i>Name <span class="pull-xs-right"><small>Hide</small><i class="fa fa-angle-up"></i></span></h5>
+                    </a>
+                    <ul class="nav nav-block collapse in" id="">
+                        <li class="nav-item">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Search Name" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 card-block-padding">
+                    <a href="#sstar-rating" data-toggle="collapse" class="egr-colapse">
+                        <h5 class="card-title"><i class="fa fa-star-o"></i>Star Rating <span class="pull-xs-right"><small>Hide</small><i class="fa fa-angle-up"></i></span></h5>
+                    </a>
+                    <ul class="nav nav-block collapse in" id="sstar-rating">
+                        <li class="nav-item">
+                            <label class="lable-checkbox">
+                                <input id="checkbox1" type="checkbox" value="1" name="checkbox1" />
+                                <i></i>
+                                <span>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                </span>
+                            </label>
+                            <span class="pull-right">only</span>
+                        </li>
+                        <li class="nav-item">
+                            <label class="lable-checkbox">
+                                <input id="checkbox2" type="checkbox" value="2" name="checkbox2" />
+                                <i></i>
+                                <span>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star grey"></i>
+
+                                </span>
+
+                            </label>
+                            <span class="pull-right">only</span>
+
+                        </li>
+                        <li class="nav-item">
+                            <label class="lable-checkbox">
+                                <input id="checkbox3" type="checkbox" value="3" name="checkbox3" />
+                                <i></i><span>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star grey"></i>
+                                    <i class="fa fa-star grey"></i>
+                                </span>
+
+                            </label>
+                            <span class="pull-right">only</span>
+
+                        </li>
+                        <li class="nav-item">
+                            <label class="lable-checkbox">
+                                <input id="checkbox4" type="checkbox" value="4" name="checkbox4" />
+                                <i></i><span>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star grey"></i>
+                                    <i class="fa fa-star grey"></i>
+                                    <i class="fa fa-star grey"></i>
+                                </span>
+
+                            </label>
+                            <span class="pull-right">only</span>
+
+                        </li>
+                        <li class="nav-item">
+                            <label class="lable-checkbox">
+                                <input id="checkbox5" type="checkbox" value="5" name="checkbox5" />
+                                <i></i><span>
+                                    <i class="fa fa-star yellow"></i>
+                                    <i class="fa fa-star grey"></i>
+                                    <i class="fa fa-star grey"></i>
+                                    <i class="fa fa-star grey"></i>
+                                    <i class="fa fa-star grey"></i>
+                                </span>
+                            </label>
+                            <span class="pull-right">only</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 card-block-padding">
+                    <a href="#sfav" data-toggle="collapse" class="egr-colapse">
+                        <h5 class="card-title"><i class="fa fa-heart-o"></i>My Favorite List <span class="pull-xs-right"><small>Hide</small><i class="fa fa-angle-up"></i></span></h5>
+                    </a>
+                    <ul class="nav nav-block collapse in" id="">
+                        <li class="nav-item">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Search in list" />
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Lorem ipsum hola tor</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Generr khah</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Madina residence</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Generr khah</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Madina residence</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Lorem ipsum hola tor</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Generr khah</a></li>
+                        <li class="nav-item"><a class="nav-link"><i class="fa fa-check-square-o"></i>Madina residence</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="egr-info">
+            <h4><%= GetLocalResourceObject("1091") %></h4>
+            <div class="">
+
+                <ul class="nav nav-block collapse in">
+                    <li class="nav-item">
+                        <div class="col-sm-2 left-side egr-no-pad">
+                            <i class="fa fa-globe circle"></i>
+                        </div>
+                        <div class="col-sm-10 right-side egr-no-pad no-ico">
+                            <h6><%= GetLocalResourceObject("1092") %></h6>
+                            <p><%= GetLocalResourceObject("1093") %>  <a href="#"><%= GetLocalResourceObject("1094") %></a></p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="col-sm-2 left-side egr-no-pad">
+                            <i class="fa fa-briefcase circle"></i>
+                        </div>
+                        <div class="col-sm-10 right-side egr-no-pad no-ico">
+                            <h6><%= GetLocalResourceObject("1095") %> </h6>
+                            <p><%= GetLocalResourceObject("1096") %></p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="col-sm-2 left-side egr-no-pad">
+                            <i class="fa fa-rocket circle"></i>
+                        </div>
+                        <div class="col-sm-10 right-side egr-no-pad no-ico">
+                            <h6><%= GetLocalResourceObject("1092") %></h6>
+                            <p><%= GetLocalResourceObject("1093") %>  <a href="#"><%= GetLocalResourceObject("1094") %></a></p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="col-sm-2 left-side egr-no-pad">
+                            <i class="fa fa-comments circle"></i>
+                        </div>
+                        <div class="col-sm-10 right-side egr-no-pad no-ico">
+                            <h6><%= GetLocalResourceObject("1095") %> </h6>
+                            <p><%= GetLocalResourceObject("1096") %></p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="col-sm-2 left-side egr-no-pad">
+                            <i class="fa fa-paper-plane circle"></i>
+                        </div>
+                        <div class="col-sm-10 right-side egr-no-pad no-ico">
+                            <h6><%= GetLocalResourceObject("1092") %></h6>
+                            <p><%= GetLocalResourceObject("1093") %>  <a href="#"><%= GetLocalResourceObject("1094") %></a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9 right-sidebar right-side" style="padding-right:0px">
+        <div class="col-xs-12 egr-no-pad">
+            <div class="egr-table-sorting">
+                <ul class="nav nav-inline">
+                    <li class="nav-item egr-no-style">
+                        <a href="#" class="nav-link"><%= GetLocalResourceObject("1097") %> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active"><%= GetLocalResourceObject("1098") %></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" type="button" id="egr-drp-star" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= GetLocalResourceObject("1099") %> <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="egr-drp-star">
+                            <a class="dropdown-item" onclick="SortTableData(this)" data-sort="StarsId" data-order="asc" id="Star1" href="#"><%= GetLocalResourceObject("1100") %></a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="StarsId" data-order="desc" id="Star2"><%= GetLocalResourceObject("1101") %></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" type="button" id="egr-drp-rate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= GetLocalResourceObject("1102") %> <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="egr-drp-rate">
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="Rate" data-order="asc" id="Rate1"><%= GetLocalResourceObject("1100") %></a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="Rate" data-order="desc" id="Rate2"><%= GetLocalResourceObject("1101") %></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" type="button" id="egr-drp-reviews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= GetLocalResourceObject("1103") %> <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="egr-drp-reviews">
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="ReviewsScore" data-order="asc" id="Review1"><%= GetLocalResourceObject("1100") %></a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="ReviewsScore" data-order="desc" id="Review2"><%= GetLocalResourceObject("1101") %></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 egr-no-pad">
+            <div class="egr-hotels-container">
+
+                <div class="egr-wait-overlay" style="position: absolute; width: 100%; text-align: center; background-color: #fff; padding: 8em 0; height: 90%; z-index: 100;">
+                    <img src="~/Content/images/500 (1).gif" style="width:40px;height:40px"/>
+                    <h5 class="text-xs-center"><%= GetLocalResourceObject("1090") %></h5>
+                </div>
+
+                <table class="display" id="egr-tbl-hotels">
+                    <thead>
+                        <tr>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" role="dialog" id="review_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Add To<span> Favorites</span></h3>
+            </div>
+            <div class="modal-body">
+                <form id="review_form" method="post">
+                    <div class="row">
+                        <input type="text" name="inst_id" id="inst_id" value="" style="display: none" />
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2">
+                            <div class="form-group">
+                                <label for="Email" class="control-label col-xs-12 col-sm-12 col-md-12 col-lg-12">Email</label>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <input type="email" class="form-control" id="FavEmail" required="required" tabindex="1" placeholder="Your valid email address." />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Comment" class="control-label col-xs-12 col-sm-12 col-md-12 col-lg-12">Review</label>
+                                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <textarea class="form-control" name="comment" required="required" placeholder="Your review"></textarea>
+                                    <input type="text" name="rating_val" id="rating_val" style="display: none" />
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 egr-no-pad padding-topbt">
+                                <label for="Comment" class="control-label col-xs-12 col-sm-4 col-md-4 col-lg-4">Give Stars</label>
+                                <div class="col-xs-12 col-sm-8" style="text-align: right">
+                                    <div class="rating">
+                                        <input type="radio" id="Favstar5" name="Favstar0" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                        <input type="radio" id="Favstar4half0" value="4.5" name="Favstar0" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                        <input type="radio" id="Favstar40" name="Favstar0" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                        <input type="radio" id="Favstar3half0" value="3.5" name="Favstar0" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                        <input type="radio" id="Favstar30" name="Favstar0" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+                                        <input type="radio" id="Favstar2half0" value="2.5" name="Favstar0" /><label class="half" for="star2half" title="bad - 2.5 stars"></label>
+                                        <input type="radio" id="Favstar20" name="Favstar0" value="2" /><label class="full" for="star2" title="bad - 2 stars"></label>
+                                        <input type="radio" id="Favstar1half0" value="1.5" name="Favstar0" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                        <input type="radio" id="Favstar10" name="Favstar0" value="1" /><label class="full" for="star1" title="bad time - 1 star"></label>
+                                        <input type="radio" id="Favstarhalf0" name="Favstar0" value="half" /><label class="half" for="starhalf" title="big bad time - 0.5 stars"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="text-align: center;">
+                                <input type="submit" class="btn btn-success" style="margin-top: 20px" value="Add to list" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-default pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Footer{
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/Hotels.js"></script>
+    <script src="~/Views/C1/Reservations.js"></script>
+    <script>
+        jQuery(function ($) {
+            // Asynchronously Load the map API
+            var script = document.createElement('script');
+            script.src = "//maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+            document.body.appendChild(script);
+        });
+
+        function initialize() {
+            var map;
+            var bounds = new google.maps.LatLngBounds();
+            var mapOptions = {
+                mapTypeId: 'roadmap'
+            };
+
+            // Display a map on the page
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            map.setTilt(45);
+
+            // Multiple Markers
+            var markers = [
+                ['London Eye, London', 51.503454, -0.119562],
+                ['Palace of Westminster, London', 51.499633, -0.124755]
+            ];
+
+            // Info Window Content
+            var infoWindowContent = [
+                ['<div class="info_content">' +
+                '<h3>London Eye</h3>' +
+                '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' + '</div>'],
+                ['<div class="info_content">' +
+                '<h3>Palace of Westminster</h3>' +
+                '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
+                '</div>']
+            ];
+
+            // Display multiple markers on a map
+            var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+            // Loop through our array of markers & place each one on the map
+            for (i = 0; i < markers.length; i++) {
+                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                bounds.extend(position);
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: markers[i][0]
+                });
+
+                // Allow each marker to have an info window
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infoWindow.setContent(infoWindowContent[i][0]);
+                        infoWindow.open(map, marker);
+                    }
+                })(marker, i));
+
+                // Automatically center the map fitting all markers on the screen
+                map.fitBounds(bounds);
+            }
+
+            // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+            var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
+                this.setZoom(14);
+                google.maps.event.removeListener(boundsListener);
+            });
+
+        }
+    </script>
+}
 
