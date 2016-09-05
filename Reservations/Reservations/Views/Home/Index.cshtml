@@ -30,7 +30,7 @@
                                 <a class="nav-link Rem" id="Villa" href="#egr-vila-form" data-toggle="tab" role="tab"><i class="fa fa-home margin-right"></i>Villa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link Rem" id="Villa1" href="#egr-wedding-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i>Wedding Hall</a>
+                                <a class="nav-link Rem" id="weddingHall" href="#egr-wedding-form" data-toggle="tab" role="tab"><i class="fa fa-building margin-right"></i>Wedding Hall</a>
                             </li>
                         </ul>
                     </div>
@@ -47,17 +47,19 @@
                                     </h6>
                                 </div>
                                 <div class="card-block">
-                                    <form id="SearchForm" role="form" method="post" data-parsley-validate>
+                                    <form id="C1SearchForm"  action="@Url.Action("Index", "C1")" role="form" method="post" data-parsley-validate>
                                         <div class="row">
 
                                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-side">
                                                 <fieldset class="form-group">
                                                     <label for="formGroupExampleInput">@HttpContext.GetLocalResourceObject("HomeController","906") </label>
-                                                    <input type="text" class="form-control Destination" data-code="174" data-level="Country"
+                                                    <input type="text" class="form-control Destination" 
                                                            required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 907")"
-                                                           name="Destination" id="DestinationHotel" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
+                                                           name="Destination" id="txtC1Destination" placeholder="@HttpContext.GetLocalResourceObject("HomeController","907") " />
                                                 </fieldset>
                                             </div>
+                                            <input type="hidden" name="FilterEntityName" />
+                                            <input type="hidden" name="FilterId" />
                                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 hidden-md-up">
                                                 <h6>@HttpContext.GetLocalResourceObject("HomeController","918") </h6>
                                             </div>
@@ -66,10 +68,10 @@
                                                     <div class="form-group">
                                                         <label for="exampleInputAmount">@HttpContext.GetLocalResourceObject("HomeController","102") </label>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control egr-calendar" id="CheckIn"
+                                                            <input type="text" class="form-control egr-calendar" id="txtC1CheckIn"
                                                                    required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 897")"
-                                                                   name="CheckIn" placeholder="@HttpContext.GetLocalResourceObject("HomeController","919") " />
-                                                            <div class="input-group-addon" id="btn-chk-in"><i class="fa fa-calendar"></i></div>
+                                                                   name="StartDate" placeholder="@HttpContext.GetLocalResourceObject("HomeController","919") " />
+                                                            <div class="input-group-addon" id="btnC1-chk-in"><i class="fa fa-calendar"></i></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -77,10 +79,10 @@
                                                     <div class="form-group">
                                                         <label for="exampleInputAmount">@HttpContext.GetLocalResourceObject("HomeController","103") </label>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control egr-calendar" id="CheckOut"
+                                                            <input type="text" class="form-control egr-calendar" id="txtC1CheckOut"
                                                                    required data-parsley-required-message="@HttpContext.GetLocalResourceObject("HomeController"," 897")"
-                                                                   name="CheckOut" placeholder="@HttpContext.GetLocalResourceObject("HomeController","920") " />
-                                                            <div class="input-group-addon" id="btn-chk-out"><i class="fa fa-calendar"></i></div>
+                                                                   name="EndDate" placeholder="@HttpContext.GetLocalResourceObject("HomeController","920") " />
+                                                            <div class="input-group-addon" id="btnC1-chk-out"><i class="fa fa-calendar"></i></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -92,7 +94,7 @@
                                                     <div class="form-group">
                                                         <label for="exampleInputAmount">@HttpContext.GetLocalResourceObject("HomeController","921") </label>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Adults" value="0 Adults" name="Adults" id="Adults" />
+                                                            <input type="text" class="form-control" placeholder="Adults" value="0 Adults" name="Adults" id="txtC1Adults" />
                                                             <div class='input-group-addon no-radius minus-it' data-field="Adults"><i class="fa fa-minus"></i></div>
                                                             <div class='input-group-addon plus-it' data-field="Adults"><i class="fa fa-plus"></i></div>
                                                         </div>
@@ -103,7 +105,7 @@
                                                     <div class="form-group">
                                                         <label for="exampleInputAmount">@HttpContext.GetLocalResourceObject("HomeController","922") </label>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Kids" value="0 Kids" name="Kids" id="Kids" />
+                                                            <input type="text" class="form-control" placeholder="Kids" value="0 Kids" name="Kids" id="txtC1Kids" />
                                                             <div class='input-group-addon no-radius minus-it' data-field="Kids"><i class="fa fa-minus"></i></div>
                                                             <div class='input-group-addon plus-it' data-field="Kids"><i class="fa fa-plus"></i></div>
                                                         </div>
@@ -114,7 +116,7 @@
                                                     <div class="form-group">
                                                         <label for="exampleInputAmount">@HttpContext.GetLocalResourceObject("HomeController","923") </label>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Infants" value="0 Infants" name="Infants" id="Infants" />
+                                                            <input type="text" class="form-control" placeholder="Infants" value="0 Infants" name="Infants" id="txtC1Infants" />
                                                             <div class='input-group-addon no-radius minus-it' data-field="Infants"><i class="fa fa-minus"></i></div>
                                                             <div class='input-group-addon plus-it' data-field="Infants"><i class="fa fa-plus"></i></div>
                                                         </div>
@@ -122,11 +124,9 @@
                                                 </div>
                                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                                     <label for="exampleInputAmount" class="empty-lbl"></label>
-                                                    <button type="submit" id="HotelSearch" class="btn btn-yellow btn-sm spcl-padding" value=""><span class="fa fa-search button-icon"></span>@HttpContext.GetLocalResourceObject("HomeController","924") </button>
+                                                    <button type="submit" id="C1Search" class="btn btn-yellow btn-sm spcl-padding" value=""><span class="fa fa-search button-icon"></span>@HttpContext.GetLocalResourceObject("HomeController","924") </button>
                                                 </div>
                                             </div>
-
-
                                             <div class="col-xs-12 col-sm-12">
                                             </div>
 

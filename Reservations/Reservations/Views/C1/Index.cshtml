@@ -1,22 +1,23 @@
-﻿
+﻿@model System.Data.DataTable
+
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @section Head{
     <link rel="stylesheet" href="~/Content/pagecss/stylehotel.css" />
     <link rel="stylesheet" href="~/Content/dataTables.bootstrap4.min.css" />
     @*<link rel="stylesheet" href="~/Content/arabiccss/ovstylehotel.css" />*@
     <script>
-        var __ViewSimillarProp = '<%= GetLocalResourceObject("1104") %>';
-        var __ViewHotDetails = '<%= GetLocalResourceObject("1132") %>';
-        var __ViewApaDetails = '<%= GetLocalResourceObject("1112") %>';
-        var __MakeInquirey = '<%= GetLocalResourceObject("126") %>';
-        var __BookNow = '<%= GetLocalResourceObject("69") %>';
-        var __Favorite = '<%= GetLocalResourceObject("1108") %>';
-        var __Reviews = '<%= GetLocalResourceObject("1020") %>';
-        var __Str_Booked = '<%= GetLocalResourceObject("1113") %>';
-        var __Str_tt = '<%= GetLocalResourceObject("1114") %>';
+        var __ViewSimillarProp = @HttpContext.GetLocalResourceObject("C1Controller","1104") ;
+        var __ViewHotDetails = @HttpContext.GetLocalResourceObject("C1Controller","1132") ;
+        var __ViewApaDetails = @HttpContext.GetLocalResourceObject("C1Controller","1112") ;
+        var __MakeInquirey = @HttpContext.GetLocalResourceObject("C1Controller","126") ;
+        var __BookNow = @HttpContext.GetLocalResourceObject("C1Controller","69") ';
+        var __Favorite = @HttpContext.GetLocalResourceObject("C1Controller","1108") ;
+        var __Reviews = @HttpContext.GetLocalResourceObject("C1Controller","1020") ;
+        var __Str_Booked = @HttpContext.GetLocalResourceObject("C1Controller","1113");
+        var __Str_tt = @HttpContext.GetLocalResourceObject("C1Controller","1114") ;
     </script>
 }
 <div class="container">
@@ -229,59 +230,7 @@
 
             </div>
         </div>
-        <div class="egr-info">
-            <h4><%= GetLocalResourceObject("1091") %></h4>
-            <div class="">
 
-                <ul class="nav nav-block collapse in">
-                    <li class="nav-item">
-                        <div class="col-sm-2 left-side egr-no-pad">
-                            <i class="fa fa-globe circle"></i>
-                        </div>
-                        <div class="col-sm-10 right-side egr-no-pad no-ico">
-                            <h6><%= GetLocalResourceObject("1092") %></h6>
-                            <p><%= GetLocalResourceObject("1093") %>  <a href="#"><%= GetLocalResourceObject("1094") %></a></p>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="col-sm-2 left-side egr-no-pad">
-                            <i class="fa fa-briefcase circle"></i>
-                        </div>
-                        <div class="col-sm-10 right-side egr-no-pad no-ico">
-                            <h6><%= GetLocalResourceObject("1095") %> </h6>
-                            <p><%= GetLocalResourceObject("1096") %></p>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="col-sm-2 left-side egr-no-pad">
-                            <i class="fa fa-rocket circle"></i>
-                        </div>
-                        <div class="col-sm-10 right-side egr-no-pad no-ico">
-                            <h6><%= GetLocalResourceObject("1092") %></h6>
-                            <p><%= GetLocalResourceObject("1093") %>  <a href="#"><%= GetLocalResourceObject("1094") %></a></p>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="col-sm-2 left-side egr-no-pad">
-                            <i class="fa fa-comments circle"></i>
-                        </div>
-                        <div class="col-sm-10 right-side egr-no-pad no-ico">
-                            <h6><%= GetLocalResourceObject("1095") %> </h6>
-                            <p><%= GetLocalResourceObject("1096") %></p>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="col-sm-2 left-side egr-no-pad">
-                            <i class="fa fa-paper-plane circle"></i>
-                        </div>
-                        <div class="col-sm-10 right-side egr-no-pad no-ico">
-                            <h6><%= GetLocalResourceObject("1092") %></h6>
-                            <p><%= GetLocalResourceObject("1093") %>  <a href="#"><%= GetLocalResourceObject("1094") %></a></p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 
     <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9 right-sidebar right-side" style="padding-right:0px">
@@ -289,30 +238,30 @@
             <div class="egr-table-sorting">
                 <ul class="nav nav-inline">
                     <li class="nav-item egr-no-style">
-                        <a href="#" class="nav-link"><%= GetLocalResourceObject("1097") %> </a>
+                        <a href="#" class="nav-link">@HttpContext.GetLocalResourceObject("C1Controller", "1097")  </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link active"><%= GetLocalResourceObject("1098") %></a>
+                        <a href="#" class="nav-link active">@HttpContext.GetLocalResourceObject("C1Controller", "1098") </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link" type="button" id="egr-drp-star" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= GetLocalResourceObject("1099") %> <i class="fa fa-caret-down"></i></a>
+                        <a href="#" class="nav-link" type="button" id="egr-drp-star" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@HttpContext.GetLocalResourceObject("C1Controller", "1099")  <i class="fa fa-caret-down"></i></a>
                         <div class="dropdown-menu" aria-labelledby="egr-drp-star">
-                            <a class="dropdown-item" onclick="SortTableData(this)" data-sort="StarsId" data-order="asc" id="Star1" href="#"><%= GetLocalResourceObject("1100") %></a>
-                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="StarsId" data-order="desc" id="Star2"><%= GetLocalResourceObject("1101") %></a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" data-sort="StarsId" data-order="asc" id="Star1" href="#">@HttpContext.GetLocalResourceObject("C1Controller", "1100") </a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="StarsId" data-order="desc" id="Star2">@HttpContext.GetLocalResourceObject("C1Controller", "1101") </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link" type="button" id="egr-drp-rate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= GetLocalResourceObject("1102") %> <i class="fa fa-caret-down"></i></a>
+                        <a href="#" class="nav-link" type="button" id="egr-drp-rate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@HttpContext.GetLocalResourceObject("C1Controller", "1102")  <i class="fa fa-caret-down"></i></a>
                         <div class="dropdown-menu" aria-labelledby="egr-drp-rate">
-                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="Rate" data-order="asc" id="Rate1"><%= GetLocalResourceObject("1100") %></a>
-                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="Rate" data-order="desc" id="Rate2"><%= GetLocalResourceObject("1101") %></a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="Rate" data-order="asc" id="Rate1">@HttpContext.GetLocalResourceObject("C1Controller", "1100") </a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="Rate" data-order="desc" id="Rate2">@HttpContext.GetLocalResourceObject("C1Controller", "1101") </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link" type="button" id="egr-drp-reviews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= GetLocalResourceObject("1103") %> <i class="fa fa-caret-down"></i></a>
+                        <a href="#" class="nav-link" type="button" id="egr-drp-reviews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@HttpContext.GetLocalResourceObject("C1Controller", "1103")  <i class="fa fa-caret-down"></i></a>
                         <div class="dropdown-menu" aria-labelledby="egr-drp-reviews">
-                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="ReviewsScore" data-order="asc" id="Review1"><%= GetLocalResourceObject("1100") %></a>
-                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="ReviewsScore" data-order="desc" id="Review2"><%= GetLocalResourceObject("1101") %></a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="ReviewsScore" data-order="asc" id="Review1">@HttpContext.GetLocalResourceObject("C1Controller", "1100") </a>
+                            <a class="dropdown-item" onclick="SortTableData(this)" href="#" data-sort="ReviewsScore" data-order="desc" id="Review2">@HttpContext.GetLocalResourceObject("C1Controller", "1101") </a>
                         </div>
                     </li>
                 </ul>
@@ -321,18 +270,130 @@
         <div class="col-xs-12 egr-no-pad">
             <div class="egr-hotels-container">
 
-                <div class="egr-wait-overlay" style="position: absolute; width: 100%; text-align: center; background-color: #fff; padding: 8em 0; height: 90%; z-index: 100;">
-                    <img src="~/Content/images/500 (1).gif" style="width:40px;height:40px"/>
-                    <h5 class="text-xs-center"><%= GetLocalResourceObject("1090") %></h5>
-                </div>
+                @*<div class="egr-wait-overlay" style="position: absolute; width: 100%; text-align: center; background-color: #fff; padding: 8em 0; height: 90%; z-index: 100;">
+                    <img src="~/Content/images/500 (1).gif" style="width:40px;height:40px" />
+                    <h5 class="text-xs-center">@HttpContext.GetLocalResourceObject("C1Controller", "1090") </h5>
+                </div>*@
 
                 <table class="display" id="egr-tbl-hotels">
                     <thead>
-                        <tr>
-                            <th></th>
-                        </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        @for (int i=0;i<Model.Rows.Count;i++)
+                        {
+                            <tr>
+                                <div class="col-sm-12 egr-s-hotel">
+                                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 img-style">
+                                        <div class="flexslider">
+                                            <ul class="slides"></ul>
+                                        </div> <div class="hotel-sm-desc">
+
+                                            <h5 class="egr-hotel-title2">@Model.Rows[i][0].ToString() <i class="icon soap-icon-hotel"></i> </h5>
+                                            <h5 class="egr-hotel-title2"> <i class="icon fa fa-eye" style="margin-right:5px"> </i> <a href="#"><a /> </h5> <br /> <span style="display:block;text-align:center">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 egr-ht-pad egr-no-pad">
+
+                                        <h4 class"egr-hotel-title"><span class="egr-hotel-cond"><span class="egr-rate"></span></span></h4>
+                                        <p class="text-muted hotel-adrs"><i class="fa fa-map-marker"></i></p>
+                                        <div class="col-sm-12 egr-hotel-detail egr-no-pad">
+                                            <div class="col-sm-12 egr-no-pad">
+                                                <ul class="nav nav-inline">
+                                                    <li class="nav-item">
+                                                        <strong><span class="text-muted"> <span class="label label-danger">152</span> </span></strong>
+
+                                                    </li>
+
+                                                    <li class="nav-item pull-right egr-favorite"><a href="#" class="nav-link"><i class="fa fa-heart-o"></i></a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-12 egr-no-pad egr-hotel-facilities">
+
+                                                <ul class="nav nav-inline">
+                                                    <li class="nav-item">
+
+                                                        <a href="#" class="nav-link"><div class="egr-review input-group"><span class="input-group-addon"><i class="fa fa-thumbs-up yellow"></i></span><span>500</span><small>Reviews</small></div></a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                    </li>
+
+                                                    <li class="nav-item pull-right">
+
+                                                        <small>Avg/Night</small>
+
+
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav nav-inline bordered-ul">
+
+
+                                                    <li class="nav-item ">
+
+                                                        <a href="#" class="nav-link"><i class="fa fa-signal"></i></a>
+
+                                                    </li>
+
+                                                    <li class="nav-item ">
+
+                                                        <a href="#" class="nav-link"><i class="fa fa-clock-o"></i></a>
+
+                                                    </li>
+
+                                                    <li class="nav-item ">
+
+                                                        <a href="#" class="nav-link"><i class="fa fa-desktop"></i></a>
+
+                                                    </li>
+
+                                                    <li class="nav-item">
+
+                                                        <a href="#" class="nav-link"><i class="fa fa-umbrella"></i></a>
+
+                                                    </li>
+                                                </ul>
+                                                <span class="egr-price-d"><a href="#" class="nav-link"><span>SAR-</span> <span>400</span></a></span>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 egr-no-pad">
+
+                                            <p class="egr-hotel-desc">
+
+                                            </p>
+                                            <div class="col-sm-12 egr-no-pad">
+
+                                                <ul class="nav nav-inline egr-hotel-footer">
+
+
+                                                    <li class="nav-item ">
+
+                                                        <a href="#" class="nav-link active"> </a>
+
+                                                    </li>
+
+
+                                                    <li class="nav-item ">
+
+                                                        <a href="#" onclick="" class="nav-link"></a>
+                                                    </li>
+
+                                                    <li class="nav-item ">
+
+                                                        <a href="#" class="nav-link no-b"></a>
+                                                    </li>
+
+                                                    <li class="nav-item pull-right"><a href="#" class="btn btn-yellow"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        }
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -402,7 +463,7 @@
     <script src="~/Scripts/jquery.dataTables.min.js"></script>
     <script src="~/Scripts/dataTables.bootstrap4.min.js"></script>
     <script src="~/Scripts/Hotels.js"></script>
-    <script src="~/Views/C1/Reservations.js"></script>
+    <script src="~/Views/C1/Index.js"></script>
     <script>
         jQuery(function ($) {
             // Asynchronously Load the map API
@@ -473,4 +534,6 @@
         }
     </script>
 }
+
+
 

@@ -313,6 +313,7 @@
     <Content Include="Scripts\Webpages\Default.js" />
     <Content Include="Scripts\Webpages\defaultpage.js" />
     <Content Include="Scripts\wow.min.js" />
+    <Content Include="Views\C1\Index.js" />
     <Content Include="Views\Home\Index.js" />
     <Content Include="Views\Shared\_Layout.js">
       <DependentUpon>_Layout.cshtml</DependentUpon>
@@ -332,6 +333,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\C1\Property.cs" />
     <Compile Include="Models\GenericModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -346,11 +348,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Views\C1\Index.cshtml" />
     <Content Include="Views\C2\Index.cshtml" />
     <Content Include="Views\C3\Index.cshtml" />
     <Content Include="Views\C4\Index.cshtml" />
     <Content Include="Views\C5\Index.cshtml" />
+    <Content Include="Views\C1\Index.cshtml" />
+    <Content Include="Views\C1\PartialViews\_Property.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,10 +1,11 @@
 ﻿function ExecuteQueryCommand(param, proc) {
     return $.ajax({
-        url: "api/DataBase/ExecuteQueryCommand/",
+        url: "../../../api/DataBase/ExecuteQueryCommand/",
         type: "POST",
         datatype: "json",
         data: JSON.stringify({ paramsList: param, procName: proc }),
         contentType: "application/json; charset=utf-8",
+        cache: false,
         success: function (data) {
             console.log(data);
         },

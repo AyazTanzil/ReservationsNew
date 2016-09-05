@@ -70,6 +70,8 @@ function Autocomplete(param, proc, DisplayCoulmns, columnsSeparator, controlId, 
                 var index = displayData.indexOf(ui.item.label);
                 for (var i = 0; i < columns.length; i++) {
                     $(controlId).attr("data-" + columns[i], jsonData[index][columns[i]]);
+                    $("input[name='FilterEntityName']").val(jsonData[index].filterEntityName);
+                    $("input[name='FilterId']").val(jsonData[index].filterId);
                 }
                 if (typeof callBackFunction == "function") callBackFunction();
             }
@@ -174,22 +176,6 @@ function waitLoader(str_pleaseWait, alertTF) {
     $("#spMessage").text(str_pleaseWait);  // Please wait while we authenticate you
 }
 
-// menu tracking function
-function MenuTracking() {
-    var url = window.location.href;
-    var page = url.substring(url.lastIndexOf("/") + 1, url.length);
-    page = page.indexOf('?') > -1 ? page.split('?') : page;
-    var page_url = typeof page == 'string' ? page_url = page : page_url = page[0];
-
-    var curr_loc = $(document).find(".sidebar-menu li a[href$='" + page_url + "']");
-    $(curr_loc).closest("li").addClass("active");
-    $(curr_loc).addClass("active");
-
-
-    var curr_ul = $(curr_loc).closest(".treeview").find(".treeview-menu");
-    $(curr_ul).closest("li").addClass("active");
-    $(curr_ul).addClass("menu-open");
-}
 
 function initialize() {
     var map;
@@ -232,31 +218,8 @@ function initialize() {
     });
 
 }
-function AutoComplete1(param, proc, controlId, placeholder, dbCode) {
-    $(controlId).empty().append("<option value='-1'>" + placeholder + "</option>");
-    if (dbCode === 2) {
-        return ExecuteQueryCommand2(param, proc)
-            .then(function (data) {
-                var dt = JSON.parse(data.d);
-                $.each(dt, function (key, value) {
-                    $(controlId).append("<option value=" + value.ID + ">" + value.Name + "</option>");
-                });
-            });
-    }
-    else {
-        return ExecuteQueryCommand(param, proc)
-            .then(function (data) {
-                var dt = JSON.parse(data.d);
-                $.each(dt, function (key, value) {
-                    $(controlId).append("<option value=" + value.ID + ">" + value.Name + "</option>");
-                });
-            });
-    }
 
-}
-function getImageType(controlId) {
-    return $(controlId).attr("src").split(',')[0].split(':')[1].split(';')[0];
-}
+
 
 function OperationSuccessMsg(insert_before, operation_name, toggle_modal, button_text) {
     var template = '<div class="modal fade login-modals with-navs operation-success-msg" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">' +
@@ -322,3 +285,47 @@ function validate_Cus(ele) {
 }
 
 
+function ShowCalendar(controlID, heading) {
+
+    $(controlID).datepicker({
+        //showMonthAfterYear: true,
+        minDate: 0,
+        maxDate: "+1y",
+        stateHover: false,
+        dateFormat: "dd/mm/yy",
+        numberOfMonths: 2,
+
+        beforeShow: function (input, inst) {
+            setTimeout(function () {
+                var wi = $(".ui-datepicker").outerWidth();
+                var left;
+                var top;
+                if ($("body").attr("dir") == "rtl") {
+                    left = $(controlID).offset().left;
+                    left = (parseInt(left) - 390);
+                } else {
+                    left = $(controlID).offset().left;
+                }
+                top = $(controlID).offset().top;
+                $("<h5 class='head-cal' style='position:absolute;top:" + (parseFloat(top) + 23) + "px;left:" + (parseFloat(left)) + "px;z-index:9999;width:" + wi + "px'>" + heading + "</h5>").insertBefore(".ui-datepicker");
+                inst.dpDiv.css({
+                    left: left,
+                    top: top + 65
+                });
+            }, 0);
+        },
+        onClose: function (selectedDate) {
+            $("body").find(".head-cal").remove();
+        }
+    });
+
+}
+function ParseForm(form) {
+   var len = form.length,
+   dataObj = {};
+
+    for (i = 0; i < len; i++) {
+        dataObj[form[i].name] = form[i].value;
+    }
+    return dataObj;
+}
